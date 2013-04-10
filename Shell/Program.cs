@@ -15,7 +15,7 @@ namespace Shell
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Shell());
+            Application.Run(new Sakura());
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Forms>
+  <Default>
+    <Form>
+      <ClassName>Kero</ClassName>
+      <ToLoad>True</ToLoad>
+    </Form>
+    <Form>
+      <ClassName>Menu</ClassName>
+      <ToLoad>True</ToLoad>
+    </Form>
+  </Default>
+  <Plugins>
+    <Form>
+      <ClassName>Redmine_Overall</ClassName>
+      <ToLoad>True</ToLoad>
+    </Form>
+  </Plugins>
+</Forms>
