@@ -45,6 +45,8 @@ namespace Shell
             //set pic source
             this.picSakura.Image = global::Shell.Properties.Resources.surface0000;
 
+            dragControl1.DesignMode(true);
+
         }
 
         private void InitializeNotifyIcon()

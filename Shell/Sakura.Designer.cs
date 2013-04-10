@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.picSakura = new System.Windows.Forms.PictureBox();
+            this.dragControl1 = new ControlLibrary.DragControl();
             ((System.ComponentModel.ISupportInitialize)(this.picSakura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,6 +41,12 @@
             this.picSakura.TabIndex = 0;
             this.picSakura.TabStop = false;
             this.picSakura.DoubleClick += new System.EventHandler(this.picSakura_DoubleClick);
+
+            // 
+            // dragControl1
+            // 
+            this.dragControl1.Visible = false;
+            this.dragControl1.DoubleClick += new System.EventHandler(this.picSakura_DoubleClick);
             // 
             // Sakura
             // 
@@ -47,18 +54,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 400);
             this.Controls.Add(this.picSakura);
+            this.Controls.Add(this.dragControl1);
             this.Name = "Sakura";
             this.Text = "Kikka";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Shell_FormClosing);
             this.Load += new System.EventHandler(this.Shell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picSakura)).EndInit();
-            this.ResumeLayout(false);
-
+            this.ResumeLayout(false);     
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox picSakura;
+        private ControlLibrary.DragControl dragControl1;
     }
 }
 
