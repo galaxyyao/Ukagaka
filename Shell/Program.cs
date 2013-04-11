@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Shell
 {
@@ -15,7 +16,31 @@ namespace Shell
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sakura());
+
+            string[] args = Environment.GetCommandLineArgs();
+            SingleInstanceController controller = new SingleInstanceController();
+            controller.Run(args);
+        }
+
+        private class SingleInstanceController : WindowsFormsApplicationBase
+        {
+            public SingleInstanceController()
+            {
+                IsSingleInstance = true;
+
+                StartupNextInstance += this_StartupNextInstance;
+            }
+
+            void this_StartupNextInstance(object sender, StartupNextInstanceEventArgs e)
+            {
+                Ukagaka shell = MainForm as Ukagaka; //My derived form type
+                //sakura.LoadFile(e.CommandLine[1]);
+            }
+
+            protected override void OnCreateMainForm()
+            {
+                MainForm = new Ukagaka();
+            }
         }
     }
 }

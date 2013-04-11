@@ -6,10 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace Shell.ControlLibrary
+namespace Shell
 {
     public partial class DragControl : UserControl
     {
@@ -135,7 +134,8 @@ namespace Shell.ControlLibrary
         {
             if (controlImage != null && controlDragStarted)
             {
-                e.Graphics.DrawRectangle(Pens.Green, controlImage);
+                //e.Graphics.DrawRectangle(Pens.Magenta, controlImage);
+                controlUnderDrag.Location = controlImage.Location;
             }
         }
     }

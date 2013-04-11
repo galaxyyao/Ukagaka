@@ -1,4 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Profile>
   <IconPath>kikka.ico</IconPath>
+  <Sakura>
+    <LastLocationX>500</LastLocationX>
+    <LastLocationY>300</LastLocationY>
+    <DialogPanel>
+      <BackColor>#AAAAAA</BackColor>
+    </DialogPanel>
+  </Sakura>
+  <Kero>
+    <LastLocationX>300</LastLocationX>
+    <LastLocationY>300</LastLocationY>
+    <DialogPanel>
+      <BackColor>#AAAAAA</BackColor>
+    </DialogPanel>
+  </Kero>
 </Profile>

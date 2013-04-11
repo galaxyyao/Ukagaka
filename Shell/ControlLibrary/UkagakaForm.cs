@@ -10,7 +10,6 @@ namespace Shell
     public class UkagakaForm : Form
     {
         public UkagakaForm()
-            : base()
         {
             ShowInTaskbar = false;
             TopMost = true;

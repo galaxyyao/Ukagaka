@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,44 +54,32 @@
     <Compile Include="ControlLibrary\DragControl.Designer.cs">
       <DependentUpon>DragControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kero.cs">
+    <Compile Include="ControlLibrary\UkagakaLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlLibrary\UkagakaMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Plugins\Ukagaka.MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kero.Designer.cs">
-      <DependentUpon>Kero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Plugins\Ukagaka.Redmine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PluginForm\Redmine\Redmine_Overall.cs">
+    <Compile Include="Plugins\Ukagaka.Say.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PluginForm\Redmine\Redmine_Overall.Designer.cs">
-      <DependentUpon>Redmine_Overall.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sakura.cs">
+    <Compile Include="Ukagaka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sakura.Designer.cs">
-      <DependentUpon>Sakura.cs</DependentUpon>
+    <Compile Include="Ukagaka.Designer.cs">
+      <DependentUpon>Ukagaka.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ControlLibrary\UkagakaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Kero.resx">
-      <DependentUpon>Kero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PluginForm\Redmine\Redmine_Overall.resx">
-      <DependentUpon>Redmine_Overall.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -101,8 +90,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sakura.resx">
-      <DependentUpon>Sakura.cs</DependentUpon>
+    <EmbeddedResource Include="Ukagaka.resx">
+      <DependentUpon>Ukagaka.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -119,7 +108,9 @@
     <EmbeddedResource Include="Configs\Profile.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configs\FormToLoad.xml" />
+    <EmbeddedResource Include="Configs\FormToLoad.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Configs\Plugins\Redmine.xml" />
     <Content Include="kikka.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -132,6 +123,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppSettings\AppSettings.csproj">
+      <Project>{2BFA817E-E1DC-4B25-BCCC-3F0A1632A7F3}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{BE863D54-5470-4BB4-BEA8-3999D4FE2328}</Project>
       <Name>Common</Name>
@@ -141,6 +136,7 @@
       <Name>Redmine</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

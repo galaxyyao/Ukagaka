@@ -1,4 +1,4 @@
-﻿namespace Shell.ControlLibrary
+﻿namespace Shell
 {
     partial class DragControl
     {
