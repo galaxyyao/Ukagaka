@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Profile>
   <IconPath>kikka.ico</IconPath>
+  <IsRedmineEnabled>True</IsRedmineEnabled>
   <Sakura>
-    <LastLocationX>500</LastLocationX>
-    <LastLocationY>300</LastLocationY>
-    <DialogPanel>
-      <BackColor>#AAAAAA</BackColor>
-    </DialogPanel>
+    <LastLocationX>1250</LastLocationX>
+    <LastLocationY>650</LastLocationY>
   </Sakura>
+  <SakuraDialogPanel>
+    <LastLocationX>1000</LastLocationX>
+    <LastLocationY>600</LastLocationY>
+  </SakuraDialogPanel>
   <Kero>
-    <LastLocationX>300</LastLocationX>
-    <LastLocationY>300</LastLocationY>
-    <DialogPanel>
-      <BackColor>#AAAAAA</BackColor>
-    </DialogPanel>
+    <LastLocationX>1200</LastLocationX>
+    <LastLocationY>850</LastLocationY>
   </Kero>
+  <KeroDialogPanel>
+    <LastLocationX>950</LastLocationX>
+    <LastLocationY>850</LastLocationY>
+  </KeroDialogPanel>
+  <DialogPanel>
+    <BackColor>#666666</BackColor>
+  </DialogPanel>
 </Profile>

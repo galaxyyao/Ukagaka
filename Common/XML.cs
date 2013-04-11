@@ -9,10 +9,26 @@ namespace Common
 {
     public static class XML
     {
-        public static T GetFirstDescendantsValue<T>(XDocument doc, string descendantsName)
+        public static T GetFirstDescendantsValue<T>(XDocument source, string descendantsName)
         {
             Type type = typeof(T);
-            object value = TypeDescriptor.GetConverter(type).ConvertFromInvariantString(doc.Descendants(descendantsName).FirstOrDefault().Value);
+            object value = TypeDescriptor.GetConverter(type).ConvertFromInvariantString(source.Descendants(descendantsName).FirstOrDefault().Value);
+            T result;
+            try
+            {
+                result = (T)Convert.ChangeType(value, type);
+            }
+            catch (InvalidCastException ex)
+            {
+                throw new InvalidCastException(ex.Message);
+            }
+            return result;
+        }
+
+        public static T GetFirstDescendantsValue<T>(XElement source, string descendantsName)
+        {
+            Type type = typeof(T);
+            object value = TypeDescriptor.GetConverter(type).ConvertFromInvariantString(source.Descendants(descendantsName).FirstOrDefault().Value);
             T result;
             try
             {

@@ -28,7 +28,7 @@ namespace Redmine
         /// <summary>
         /// Specify if there is any opened issue is close to the due date.
         /// </summary>
-        public bool CloseToDueDate
+        public bool IsCloseToDueDate
         {
             get;
             set;

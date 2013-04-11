@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
+using AppSettings;
 
 namespace Shell
 {
@@ -34,8 +35,8 @@ namespace Shell
 
         private void Shell_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             _icon.Visible = false;
-            MessageBox.Show("bye");
         }
 
         private void InitializeNotifyIcon()
@@ -54,7 +55,7 @@ namespace Shell
         {
             _contextMenu = new ContextMenu();
             _contextMenu.MenuItems.Add(0, new MenuItem("居中显示", new System.EventHandler(SetControlLocationToCenter_Click)));
-            _contextMenu.MenuItems.Add(1, new MenuItem("告别", new System.EventHandler(Exit_Click)));
+            _contextMenu.MenuItems.Add(1, new MenuItem("退出", new System.EventHandler(ExitMenu_Click)));
             _icon.ContextMenu = _contextMenu;
         }
 
@@ -73,15 +74,25 @@ namespace Shell
 
         private void InitializeControls()
         {
+            Settings settings = Settings.Instance;
+            //set default location
+            picSakura.Location = new Point(settings.Shell_SakuraLocationX, settings.Shell_SakuraLocationY);
+            picKero.Location = new Point(settings.Shell_KeroLocationX, settings.Shell_KeroLocationY);
+            dialogPanelSakura.Location = new Point(settings.Shell_SakuraDialogPanelLocationX, settings.Shell_SakuraDialogPanelLocationY);
+            dialogPanelKero.Location = new Point(settings.Shell_KeroDialogPanelLocationX, settings.Shell_KeroDialogPanelLocationY);
+
             //set pic source
             this.picSakura.Image = global::Shell.Properties.Resources.surface0000;
             this.picKero.Image = global::Shell.Properties.Resources.surface1101;
 
             //set Dialog Panel
-            dialogPanelSakura.BackColor = Color.Gray;
-            dialogPanelKero.BackColor = Color.Gray;
+            dialogPanelSakura.BackColor = System.Drawing.ColorTranslator.FromHtml(settings.Shell_DialogPanelBackColor);
+            dialogPanelKero.BackColor = System.Drawing.ColorTranslator.FromHtml(settings.Shell_DialogPanelBackColor);
             dialogPanelSakura.FlowDirection = FlowDirection.TopDown;
             dialogPanelKero.FlowDirection = FlowDirection.TopDown;
+            dialogPanelSakura.Padding = new Padding(10, 10, 10, 10);
+            dialogPanelKero.Padding = new Padding(10, 10, 10, 10);
+            dialogPanelKero.Hide();
         }
 
         private void Icon_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -92,7 +103,6 @@ namespace Shell
         private void picSakura_Click(object sender, EventArgs e)
         {
             dialogPanelSakura.Visible = (dialogPanelSakura.Visible == true) ? false : true;
-
         }
 
         private void picKero_Click(object sender, EventArgs e)
@@ -113,8 +123,14 @@ namespace Shell
             dialogPanelKero.Location = new Point(ClientSize.Width / 2 - 300, ClientSize.Height / 2 + 200);
         }
 
-        private void Exit_Click(object sender, EventArgs e)
+        public void ExitMenu_Click(object sender, EventArgs e)
         {
+            SakuraSay("下次再见~");
+            Settings.Instance.Shell_WriteLocationSettings(Settings.ControlEnum.Sakura, picSakura.Location.X, picSakura.Location.Y);
+            Settings.Instance.Shell_WriteLocationSettings(Settings.ControlEnum.SakuraDialogPanel, dialogPanelSakura.Location.X, dialogPanelSakura.Location.Y);
+            Settings.Instance.Shell_WriteLocationSettings(Settings.ControlEnum.Kero, picKero.Location.X, picKero.Location.Y);
+            Settings.Instance.Shell_WriteLocationSettings(Settings.ControlEnum.KeroDialogPanel, dialogPanelKero.Location.X, dialogPanelKero.Location.Y);
+            Settings.Instance.Shell_SaveSettings();
             Close();
         }
     }

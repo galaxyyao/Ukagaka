@@ -9,13 +9,23 @@ namespace Shell
 {
     public partial class Ukagaka
     {
-        public void SakuraSay()
+        public void SakuraSay(string text)
         {
             dialogPanelSakura.Controls.Clear();
+            dialogPanelSakura.Show();
 
+            UkagakaLabel lblSay = new UkagakaLabel();
+            lblSay.Width = 250;
+            lblSay.Text = text;
+
+            UkagakaMenu returnMenu = new UkagakaMenu();
+            returnMenu.Text = "返回主菜单";
+
+            dialogPanelSakura.Controls.Add(lblSay);
+            dialogPanelSakura.Controls.Add(returnMenu);
         }
 
-        public void KeroSay()
+        public void KeroSay(string text)
         {
             Label lbl3 = new Label();
             lbl3.Text = "ccc";

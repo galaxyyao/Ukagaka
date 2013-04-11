@@ -60,13 +60,22 @@
     <Compile Include="ControlLibrary\UkagakaMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Plugins\Ukagaka.BaseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Plugins\Ukagaka.MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Ukagaka.MainMenu.Redmine.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Plugins\Ukagaka.Redmine.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Plugins\Ukagaka.Say.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Ukagaka.Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ukagaka.cs">
@@ -111,7 +120,9 @@
     <EmbeddedResource Include="Configs\FormToLoad.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Content Include="Configs\Plugins\Redmine.xml" />
+    <EmbeddedResource Include="Configs\Plugins\Redmine.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="kikka.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

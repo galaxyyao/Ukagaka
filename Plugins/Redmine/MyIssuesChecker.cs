@@ -21,8 +21,8 @@ namespace Redmine
         public MyIssuesChecker()
         {
             Settings settings = Settings.Instance;
-            settings.InitializeRedmineSettings();
-            _manager = new RedmineManager(settings.Host, settings.ApiKey);
+            settings.Redmine_ReadSettings();
+            _manager = new RedmineManager(settings.Redmine_Host, settings.Redmine_ApiKey);
         }
 
 
@@ -44,11 +44,11 @@ namespace Redmine
                 }
                 else if (statusName == "New" || statusName == "In Progress" || statusName == "Feedback")
                 {
-                    if (!result.CloseToDueDate && issue.DueDate != null)
+                    if (!result.IsCloseToDueDate && issue.DueDate != null)
                     {
                         if (((DateTime)(issue.DueDate) - DateTime.Today).TotalDays <= 1)
                         {
-                            result.CloseToDueDate = true;
+                            result.IsCloseToDueDate = true;
                         }
                     }
                     openedCount++;

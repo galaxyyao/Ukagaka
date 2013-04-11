@@ -2,39 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Xml.Linq;
+using Common;
 
 namespace AppSettings
 {
     public partial class Settings
     {
-        public string Host
+        private const string _redmineProfilePath = @"Configs/Plugins/Redmine.xml";
+        private XDocument _redmineProfile;
+
+        public string Redmine_Host
         {
             get;
             internal set;
         }
 
-        public string ApiKey
+        public string Redmine_ApiKey
         {
             get;
             internal set;
         }
 
-        public int CheckIssueInterval
+        public int Redmine_CheckIssueIntervalMinutes
         {
             get;
             internal set;
         }
 
-        public void InitializeRedmineSettings()
+        public void Redmine_ReadSettings()
         {
-            Host = "p.honestwalker.com";
-            ApiKey = "4b6f7b8daca67249e19b074d290bd9835e160bfb";
-            CheckIssueInterval = 1000 * 60 * 10;
-        }
+            _redmineProfile = XDocument.Load(_redmineProfilePath);
 
-        public void SaveSettings()
-        {
 
+            Redmine_Host = XML.GetFirstDescendantsValue<string>(_redmineProfile, "Host");
+            Redmine_ApiKey = XML.GetFirstDescendantsValue<string>(_redmineProfile, "ApiKey");
+            Redmine_CheckIssueIntervalMinutes = 1000 * 60 * XML.GetFirstDescendantsValue<int>(_redmineProfile, "CheckIssueIntervalMinutes"); ;
         }
     }
 }
