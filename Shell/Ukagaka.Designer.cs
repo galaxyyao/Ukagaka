@@ -42,41 +42,28 @@
             // 
             this.dragControl1.Location = new System.Drawing.Point(0, 0);
             this.dragControl1.Name = "dragControl1";
-            this.dragControl1.Size = new System.Drawing.Size(150, 150);
             this.dragControl1.TabIndex = 1;
             this.dragControl1.Visible = false;
             // 
             // picSakura
             // 
-            this.picSakura.Location = new System.Drawing.Point(473, 183);
             this.picSakura.Name = "picSakura";
-            this.picSakura.Size = new System.Drawing.Size(300, 344);
-            this.picSakura.TabIndex = 0;
             this.picSakura.TabStop = false;
             this.picSakura.Click += new System.EventHandler(this.picSakura_Click);
             // 
             // picKero
             // 
-            this.picKero.Location = new System.Drawing.Point(55, 414);
             this.picKero.Name = "picKero";
-            this.picKero.Size = new System.Drawing.Size(106, 140);
-            this.picKero.TabIndex = 4;
             this.picKero.TabStop = false;
             this.picKero.Click += new System.EventHandler(this.picKero_Click);
             // 
             // dialogPanelSakura
             // 
-            this.dialogPanelSakura.Location = new System.Drawing.Point(86, 183);
             this.dialogPanelSakura.Name = "dialogPanelSakura";
-            this.dialogPanelSakura.Size = new System.Drawing.Size(350, 200);
-            this.dialogPanelSakura.TabIndex = 5;
             // 
             // dialogPanelKero
             // 
-            this.dialogPanelKero.Location = new System.Drawing.Point(199, 428);
             this.dialogPanelKero.Name = "dialogPanelKero";
-            this.dialogPanelKero.Size = new System.Drawing.Size(200, 100);
-            this.dialogPanelKero.TabIndex = 6;
             // 
             // Ukagaka
             // 

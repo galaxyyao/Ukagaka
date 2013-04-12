@@ -81,6 +81,12 @@ namespace Shell
             dialogPanelSakura.Location = new Point(settings.Shell_SakuraDialogPanelLocationX, settings.Shell_SakuraDialogPanelLocationY);
             dialogPanelKero.Location = new Point(settings.Shell_KeroDialogPanelLocationX, settings.Shell_KeroDialogPanelLocationY);
 
+            //set size
+            this.picSakura.Size = new System.Drawing.Size(settings.Shell_SakuraWidth, settings.Shell_SakuraHeight);
+            this.picKero.Size = new System.Drawing.Size(settings.Shell_KeroWidth, settings.Shell_KeroHeight);
+            this.dialogPanelSakura.Size = new System.Drawing.Size(settings.Shell_SakuraDialogPanelWidth, settings.Shell_SakuraDialogPanelHeight);
+            this.dialogPanelKero.Size = new System.Drawing.Size(settings.Shell_KeroDialogPanelWidth, settings.Shell_KeroDialogPanelHeight);
+
             //set pic source
             this.picSakura.Image = global::Shell.Properties.Resources.surface0000;
             this.picKero.Image = global::Shell.Properties.Resources.surface1101;

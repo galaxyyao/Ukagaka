@@ -5,20 +5,41 @@
   <Sakura>
     <LastLocationX>1250</LastLocationX>
     <LastLocationY>650</LastLocationY>
+    <Width>300</Width>
+    <Height>344</Height>
   </Sakura>
   <SakuraDialogPanel>
     <LastLocationX>1000</LastLocationX>
-    <LastLocationY>600</LastLocationY>
+    <LastLocationY>500</LastLocationY>
+    <Width>350</Width>
+    <Height>300</Height>
   </SakuraDialogPanel>
   <Kero>
     <LastLocationX>1200</LastLocationX>
     <LastLocationY>850</LastLocationY>
+    <Width>106</Width>
+    <Height>140</Height>
   </Kero>
   <KeroDialogPanel>
     <LastLocationX>950</LastLocationX>
     <LastLocationY>850</LastLocationY>
+    <Width>200</Width>
+    <Height>100</Height>
   </KeroDialogPanel>
-  <DialogPanel>
-    <BackColor>#666666</BackColor>
-  </DialogPanel>
+  <Appearance>
+    <DialogPanel>
+      <BackColor>#666666</BackColor>
+      <FontSize>12</FontSize>
+    </DialogPanel>
+    <Button>
+      <BackColor>#FCA90D</BackColor>
+      <ForeColor>#FFFFFF</ForeColor>
+      <MouseEnterBackColor>#FC610D</MouseEnterBackColor>
+      <MouseEnterForeColor>#FFFFFF</MouseEnterForeColor>
+    </Button>
+    <Label>
+      <BackColor></BackColor>
+      <ForeColor>#FFFFFF</ForeColor>
+    </Label>
+  </Appearance>
 </Profile>
