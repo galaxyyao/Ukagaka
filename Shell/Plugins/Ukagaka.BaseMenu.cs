@@ -8,25 +8,30 @@ namespace Shell
 {
     public partial class Ukagaka
     {
-
-        private Dictionary<MenuEnum, Action<MenuEnum>> _loadMenuActionlookups = new Dictionary<MenuEnum, Action<MenuEnum>>();
+        private Dictionary<MenuEnum, Action> _loadMenuActionlookups = new Dictionary<MenuEnum, Action>();
+        private MenuEnum _lastMenu;
+        private MenuEnum _currentMenu;
 
         public enum MenuEnum
         {
-            MainMenu, Redmine, Settings
+            MainMenu, Redmine, Settings, Settings_Redmine
         }
 
         public void InitializeMenuTable()
         {
-            //m_outboxActionloopups.Add(Interactions.BaseInteraction.PlayerAction.Pass, ProcessRespondPass);
+            _loadMenuActionlookups.Add(MenuEnum.MainMenu, LoadMainMenu);
+            _loadMenuActionlookups.Add(MenuEnum.Settings, LoadSettingMenu);
+            _loadMenuActionlookups.Add(MenuEnum.Settings_Redmine, LoadSettingRedmineMenu);
         }
 
         public void LoadMenu(MenuEnum menu)
         {
-            Action<MenuEnum> loadMenuAction;
+            _lastMenu = _currentMenu;
+            Action loadMenuAction;
             if (_loadMenuActionlookups.TryGetValue(menu, out loadMenuAction))
             {
-                loadMenuAction(menu);
+                loadMenuAction();
+                _currentMenu = menu;
             }
             else
             {
@@ -54,12 +59,12 @@ namespace Shell
 
         void returnMenu_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            LoadMenu(_lastMenu);
         }
 
         void returnToMainMenu_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            LoadMenu(MenuEnum.MainMenu);
         }
     }
 }

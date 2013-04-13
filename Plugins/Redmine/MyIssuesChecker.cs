@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using Redmine.Net.Api;
 using Redmine.Net.Api.Types;
 using AppSettings;
+using Common;
 
 namespace Redmine
 {
@@ -21,7 +22,6 @@ namespace Redmine
         public MyIssuesChecker()
         {
             Settings settings = Settings.Instance;
-            settings.Redmine_ReadSettings();
             _manager = new RedmineManager(settings.Redmine_Host, settings.Redmine_ApiKey);
         }
 
@@ -34,6 +34,7 @@ namespace Redmine
 
             int openedCount = 0;
             int resolvedCount = 0;
+            int nearestDue = 100;
 
             foreach (var issue in issues)
             {
@@ -44,18 +45,17 @@ namespace Redmine
                 }
                 else if (statusName == "New" || statusName == "In Progress" || statusName == "Feedback")
                 {
-                    if (!result.IsCloseToDueDate && issue.DueDate != null)
-                    {
-                        if (((DateTime)(issue.DueDate) - DateTime.Today).TotalDays <= 1)
-                        {
-                            result.IsCloseToDueDate = true;
-                        }
-                    }
                     openedCount++;
+                    if (issue.DueDate == null)
+                        continue;
+                    if ((DateTime)(issue.DueDate) < DateTime.Today)
+                        result.NearestDue = Convert.ToInt32(((DateTime)(issue.DueDate) - DateTime.Today).TotalDays);
+                    else if (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)(issue.DueDate)) < nearestDue)
+                        result.NearestDue = ExtDate.GetBusinessDays(DateTime.Today, (DateTime)(issue.DueDate));
                 }
             }
-            result.ResolvedCount = resolvedCount;
-            result.OpenedCount = openedCount;
+            result.ToCloseIssueCount = resolvedCount;
+            result.OpenIssueCount = openedCount;
 
             return result;
         }

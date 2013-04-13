@@ -63,6 +63,12 @@
     <Compile Include="ControlLibrary\UkagakaMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ControlLibrary\UkagakaRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlLibrary\UkagakaTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Plugins\Ukagaka.BaseMenu.cs">
       <SubType>Form</SubType>
     </Compile>

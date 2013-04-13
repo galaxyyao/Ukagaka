@@ -25,19 +25,21 @@ namespace Shell
                 MainMenu_AddRedmineMenuItems();
             }
 
+
             UkagakaMenu settingMenu = new UkagakaMenu();
             settingMenu.Text = "设置";
             settingMenu.Click += new EventHandler(settingMenu_Click);
             UkagakaMenu exitMenu = new UkagakaMenu();
             exitMenu.Text = "退出";
             exitMenu.Click += new EventHandler(ExitMenu_Click);
+
             dialogPanelSakura.Controls.Add(settingMenu);
             dialogPanelSakura.Controls.Add(exitMenu);
         }
 
         void settingMenu_Click(object sender, EventArgs e)
         {
-            LoadSettingMenu();
+            LoadMenu(MenuEnum.Settings);
         }
     }
 }

@@ -204,31 +204,31 @@ namespace AppSettings
             _controlNameDictionary.Add(ControlEnum.Kero, "Kero");
             _controlNameDictionary.Add(ControlEnum.KeroDialogPanel, "KeroDialogPanel");
 
-            Shell_IconPath = XML.GetFirstDescendantsValue<string>(_shellProfile, "IconPath");
-            IsRedmineEnabled = XML.GetFirstDescendantsValue<bool>(_shellProfile, "IsRedmineEnabled");
+            Shell_IconPath = ExtXML.GetFirstDescendantsValue<string>(_shellProfile, "IconPath");
+            IsRedmineEnabled = ExtXML.GetFirstDescendantsValue<bool>(_shellProfile, "IsRedmineEnabled");
 
             #region Location
             string elementName1 = "LastLocationX";
             string elementName2 = "LastLocationY";
 
-            Shell_SakuraLocationX = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraLocationX = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Sakura]), elementName1);
-            Shell_SakuraLocationY = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraLocationY = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Sakura]), elementName2);
 
-            Shell_SakuraDialogPanelLocationX = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraDialogPanelLocationX = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.SakuraDialogPanel]), elementName1);
-            Shell_SakuraDialogPanelLocationY = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraDialogPanelLocationY = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.SakuraDialogPanel]), elementName2);
 
-            Shell_KeroLocationX = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroLocationX = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Kero]), elementName1);
-            Shell_KeroLocationY = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroLocationY = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Kero]), elementName2);
 
-            Shell_KeroDialogPanelLocationX = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroDialogPanelLocationX = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.KeroDialogPanel]), elementName1);
-            Shell_KeroDialogPanelLocationY = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroDialogPanelLocationY = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.KeroDialogPanel]), elementName2);
             #endregion
 
@@ -236,43 +236,43 @@ namespace AppSettings
             elementName1 = "Width";
             elementName2 = "Height";
 
-            Shell_SakuraWidth = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraWidth = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Sakura]), elementName1);
-            Shell_SakuraHeight = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraHeight = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Sakura]), elementName2);
 
-            Shell_SakuraDialogPanelWidth = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraDialogPanelWidth = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.SakuraDialogPanel]), elementName1);
-            Shell_SakuraDialogPanelHeight = XML.GetFirstDescendantsValue<int>(
+            Shell_SakuraDialogPanelHeight = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.SakuraDialogPanel]), elementName2);
 
-            Shell_KeroWidth = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroWidth = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Kero]), elementName1);
-            Shell_KeroHeight = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroHeight = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.Kero]), elementName2);
 
-            Shell_KeroDialogPanelWidth = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroDialogPanelWidth = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.KeroDialogPanel]), elementName1);
-            Shell_KeroDialogPanelHeight = XML.GetFirstDescendantsValue<int>(
+            Shell_KeroDialogPanelHeight = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element(_controlNameDictionary[ControlEnum.KeroDialogPanel]), elementName2);
             #endregion
 
             #region Panel appearance
-            Shell_DialogPanelBackColor = XML.GetFirstDescendantsValue<string>(
+            Shell_DialogPanelBackColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("DialogPanel"), "BackColor");
-            Shell_DialogPanelFontSize = XML.GetFirstDescendantsValue<int>(
+            Shell_DialogPanelFontSize = ExtXML.GetFirstDescendantsValue<int>(
                 _shellProfile.Root.Element("Appearance").Element("DialogPanel"), "FontSize");
-            Shell_ButtonBackColor = XML.GetFirstDescendantsValue<string>(
+            Shell_ButtonBackColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Button"), "BackColor");
-            Shell_ButtonForeColor = XML.GetFirstDescendantsValue<string>(
+            Shell_ButtonForeColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Button"), "ForeColor");
-            Shell_ButtonMouseEnterBackColor = XML.GetFirstDescendantsValue<string>(
+            Shell_ButtonMouseEnterBackColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Button"), "MouseEnterBackColor");
-            Shell_ButtonMouseEnterForeColor = XML.GetFirstDescendantsValue<string>(
+            Shell_ButtonMouseEnterForeColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Button"), "MouseEnterForeColor");
-            Shell_LabelBackColor = XML.GetFirstDescendantsValue<string>(
+            Shell_LabelBackColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Label"), "BackColor");
-            Shell_LabelForeColor = XML.GetFirstDescendantsValue<string>(
+            Shell_LabelForeColor = ExtXML.GetFirstDescendantsValue<string>(
                 _shellProfile.Root.Element("Appearance").Element("Label"), "ForeColor");
             #endregion
         }

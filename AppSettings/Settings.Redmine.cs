@@ -36,9 +36,16 @@ namespace AppSettings
             _redmineProfile = XDocument.Load(_redmineProfilePath);
 
 
-            Redmine_Host = XML.GetFirstDescendantsValue<string>(_redmineProfile, "Host");
-            Redmine_ApiKey = XML.GetFirstDescendantsValue<string>(_redmineProfile, "ApiKey");
-            Redmine_CheckIssueIntervalMinutes = 1000 * 60 * XML.GetFirstDescendantsValue<int>(_redmineProfile, "CheckIssueIntervalMinutes"); ;
+            Redmine_Host = ExtXML.GetFirstDescendantsValue<string>(_redmineProfile, "Host");
+            Redmine_ApiKey = ExtXML.GetFirstDescendantsValue<string>(_redmineProfile, "ApiKey");
+            Redmine_CheckIssueIntervalMinutes = 1000 * 60 * ExtXML.GetFirstDescendantsValue<int>(_redmineProfile, "CheckIssueIntervalMinutes");
+        }
+
+        public void Redmine_SetApiKey(string apiKey)
+        {
+            Redmine_ApiKey = apiKey;
+            _redmineProfile.Root.Element("ApiKey").Value = apiKey;
+            _redmineProfile.Save(_redmineProfilePath);
         }
     }
 }

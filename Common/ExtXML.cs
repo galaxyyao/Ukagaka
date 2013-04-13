@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Common
 {
-    public static class XML
+    public static class ExtXML
     {
         public static T GetFirstDescendantsValue<T>(XDocument source, string descendantsName)
         {

@@ -10,7 +10,7 @@ namespace Redmine
         /// <summary>
         /// Returns count of 'Resovled' issues.
         /// </summary>
-        public int ResolvedCount
+        public int ToCloseIssueCount
         {
             get;
             set;
@@ -19,7 +19,7 @@ namespace Redmine
         /// <summary>
         /// Returns count of all working issues, that is, status is 'New' or 'In Progress' or 'Feedback'
         /// </summary>
-        public int OpenedCount
+        public int OpenIssueCount
         {
             get;
             set;
@@ -28,7 +28,7 @@ namespace Redmine
         /// <summary>
         /// Specify if there is any opened issue is close to the due date.
         /// </summary>
-        public bool IsCloseToDueDate
+        public int NearestDue
         {
             get;
             set;
