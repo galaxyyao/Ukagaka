@@ -90,7 +90,7 @@ namespace Redmine.Net.Api
         /// <param name="verifyServerCert">if set to <c>true</c> [verify server cert].</param>
         public RedmineManager(string host, MimeFormat mimeFormat = MimeFormat.xml, bool verifyServerCert = true)
         {
-            PageSize = 25;
+            PageSize = 100;
 
             Uri uriResult;
             if (!Uri.TryCreate(host, UriKind.Absolute, out uriResult) || !(uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
@@ -123,7 +123,7 @@ namespace Redmine.Net.Api
         public RedmineManager(string host, string apiKey, MimeFormat mimeFormat = MimeFormat.xml, bool verifyServerCert = true)
             : this(host, mimeFormat, verifyServerCert)
         {
-            PageSize = 25;
+            PageSize = 100;
             this.apiKey = apiKey;
         }
 
@@ -145,7 +145,7 @@ namespace Redmine.Net.Api
         public RedmineManager(string host, string login, string password, MimeFormat mimeFormat = MimeFormat.xml, bool verifyServerCert = true)
             : this(host, mimeFormat, verifyServerCert)
         {
-            PageSize = 25;
+            PageSize = 200;
             Uri uriResult;
             if (!Uri.TryCreate(host, UriKind.Absolute, out uriResult) || !(uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
                 host = "http://" + host;
@@ -447,7 +447,7 @@ namespace Redmine.Net.Api
             int.TryParse(parameters["limit"], out pageSize);
             if (pageSize == default(int))
             {
-                pageSize = PageSize > 0 ? PageSize : 25;
+                pageSize = PageSize > 0 ? PageSize : 100;
                 parameters.Set("limit", pageSize.ToString(CultureInfo.InvariantCulture));
             }
             do

@@ -57,7 +57,13 @@
     <Compile Include="ControlLibrary\DragControl.Designer.cs">
       <DependentUpon>DragControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlLibrary\UkagakaComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ControlLibrary\UkagakaLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlLibrary\UkagakaListBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ControlLibrary\UkagakaMenu.cs">

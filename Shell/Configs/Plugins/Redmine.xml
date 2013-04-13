@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Redmine>
   <Host>p.honestwalker.com</Host>
-  <!--<ApiKey></ApiKey>-->
-  <ApiKey>4b6f7b8daca67249e19b074d290bd9835e160bfb</ApiKey>
+  <!--<ApiKey>b158b6bd27cb04a3fdf0302d5ae4c02cacf0c046</ApiKey>-->
+  <!--<ApiKey>4b6f7b8daca67249e19b074d290bd9835e160bfb</ApiKey>-->
+  <ApiKey>b158b6bd27cb04a3fdf0302d5ae4c02cacf0c046</ApiKey>
   <CheckIssueIntervalMinutes>10</CheckIssueIntervalMinutes>
 </Redmine>

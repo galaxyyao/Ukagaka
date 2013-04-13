@@ -51,7 +51,8 @@ namespace Shell
             UkagakaLabel blank1 = new UkagakaLabel();
             blank1.Text = string.Empty;
             UkagakaMenu redmineMenu = new UkagakaMenu();
-            redmineMenu.Text = "当前任务";
+            redmineMenu.Text = "任务详情";
+            redmineMenu.Click += new EventHandler(redmineMenu_Click);
 
             dialogPanelSakura.Controls.Add(_lblOpenIssue);
             dialogPanelSakura.Controls.Add(_lblToCloseIssue);
@@ -59,9 +60,14 @@ namespace Shell
             dialogPanelSakura.Controls.Add(redmineMenu);
         }
 
+        void redmineMenu_Click(object sender, EventArgs e)
+        {
+            LoadMenu(MenuEnum.Redmine);
+        }
+
         void _lblOpenIssue_MouseLeave(object sender, EventArgs e)
         {
-            _lblOpenIssue.ForeColor = Color.White;
+            _lblOpenIssue.ForeColor = (_lblOpenIssue.BackColor == Color.Yellow) ? ColorTranslator.FromHtml("#111111") : Color.White;
         }
 
         void _lblOpenIssue_MouseEnter(object sender, EventArgs e)
@@ -81,7 +87,6 @@ namespace Shell
 
         void _lblOpenIssue_Click(object sender, EventArgs e)
         {
-            //Process.Start("http://p.honestwalker.com/issues?assigned_to_id=me");
             Process.Start("http://p.honestwalker.com/issues?set_filter=1&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=me&f[]=status_id&op[status_id]==&v[status_id][]=1&v[status_id][]=2&v[status_id][]=4");
         }
 
@@ -167,7 +172,10 @@ namespace Shell
                 if (result.NearestDue == -1 || result.NearestDue > 3)
                     _lblOpenIssue.BackColor = Color.Green;
                 else if (result.NearestDue >= 1)
+                {
                     _lblOpenIssue.BackColor = Color.Yellow;
+                    _lblOpenIssue.ForeColor = ColorTranslator.FromHtml("#111111");
+                }
                 else if (result.NearestDue >= 0)
                     _lblOpenIssue.BackColor = Color.Orange;
                 else

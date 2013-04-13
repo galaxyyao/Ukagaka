@@ -16,7 +16,8 @@ namespace Redmine
 
         private NameValueCollection paraAssignedToMe = new NameValueCollection { 
             { "assigned_to_id", "me" }, 
-            { "status_id", "open" } 
+            { "status_id", "open" },
+            {"limit", "200"}
             };
 
         public MyIssuesChecker()

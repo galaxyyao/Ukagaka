@@ -14,7 +14,7 @@ namespace Shell
 
         public enum MenuEnum
         {
-            MainMenu, Redmine, Settings, Settings_Redmine
+            MainMenu, Settings, Settings_Redmine, Redmine, Redmine_Detail
         }
 
         public void InitializeMenuTable()
@@ -22,6 +22,8 @@ namespace Shell
             _loadMenuActionlookups.Add(MenuEnum.MainMenu, LoadMainMenu);
             _loadMenuActionlookups.Add(MenuEnum.Settings, LoadSettingMenu);
             _loadMenuActionlookups.Add(MenuEnum.Settings_Redmine, LoadSettingRedmineMenu);
+            _loadMenuActionlookups.Add(MenuEnum.Redmine, LoadRedmineMainMenu);
+            _loadMenuActionlookups.Add(MenuEnum.Redmine_Detail, LoadRedmineDetailMenu);
         }
 
         public void LoadMenu(MenuEnum menu)
