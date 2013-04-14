@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+  <Service>
+    <Name>Redmine</Name>
+    <IsEnabled>True</IsEnabled>
+  </Service>
+</Services>

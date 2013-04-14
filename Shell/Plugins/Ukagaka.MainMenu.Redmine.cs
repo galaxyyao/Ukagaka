@@ -154,7 +154,8 @@ namespace Shell
             AppSettings.Settings.Instance.Redmine_SetApiKey(_mainMenu_txtApiKey.Text);
             popupPanel1.Controls.Clear();
             popupPanel1.Hide();
-            UpdateIssueInfo();
+            _issueUpdateWorker.DoWork += new DoWorkEventHandler(_issueUpdateWorker_DoWork);
+            _issueUpdateWorker.RunWorkerAsync();
             StartScheduledUpdate();
         }
 
