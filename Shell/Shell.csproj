@@ -166,6 +166,10 @@
       <Project>{8203A14C-2C6D-4AC1-B62E-AAFA550FFCF9}</Project>
       <Name>Ghost</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Third-parties\Redmine.Net.Api\Redmine.Net.Api.csproj">
+      <Project>{F99E4720-D2A0-461B-A454-E6169BFA8C38}</Project>
+      <Name>Redmine.Net.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

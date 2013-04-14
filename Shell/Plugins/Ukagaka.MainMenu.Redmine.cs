@@ -175,7 +175,7 @@ namespace Shell
             Ghost.Redmine.CheckResult result = Ghost.Ghost.Instance.RedmineService.CurrentResult;
 
             _lblOpenIssue.Text = string.Format("待完成的任务：{0}", result.OpenIssueCount);
-            if (result.NearestDue == -1 || result.NearestDue > 3)
+            if (result.NearestDue >= 3)
                 _lblOpenIssue.BackColor = Color.Green;
             else if (result.NearestDue >= 1)
             {
