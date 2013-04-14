@@ -57,6 +57,9 @@
     <Compile Include="ControlLibrary\DragControl.Designer.cs">
       <DependentUpon>DragControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlLibrary\UkagakaCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ControlLibrary\UkagakaComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -129,15 +132,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Configs\Profile.xml">
+    <EmbeddedResource Include="Configs\Shell.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configs\FormToLoad.xml">
+    <EmbeddedResource Include="Configs\Services.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Configs\Plugins\Redmine.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="kikka.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -158,9 +162,9 @@
       <Project>{BE863D54-5470-4BB4-BEA8-3999D4FE2328}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Redmine\Redmine.csproj">
-      <Project>{086247E5-29BD-49C6-A253-12CB9384064A}</Project>
-      <Name>Redmine</Name>
+    <ProjectReference Include="..\Ghost\Ghost.csproj">
+      <Project>{8203A14C-2C6D-4AC1-B62E-AAFA550FFCF9}</Project>
+      <Name>Ghost</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

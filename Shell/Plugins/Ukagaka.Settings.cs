@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using Microsoft.Win32;
 
 namespace Shell
 {
     public partial class Ukagaka
     {
         private UkagakaMenu _settings_redmineMenu;
+        private UkagakaCheckBox _settings_chboxIsStartWhenWindowsStartup;
 
         public void LoadSettingMenu()
         {
@@ -46,11 +48,22 @@ namespace Shell
 
             dialogPanelSakura.Controls.Add(lblGuide1);
             dialogPanelSakura.Controls.Add(_mainMenu_txtApiKey);
-            dialogPanelSakura.Controls.Add(_mainMenu_confirmMenu);
+            
+
+            _settings_chboxIsStartWhenWindowsStartup = new UkagakaCheckBox();
+            _settings_chboxIsStartWhenWindowsStartup.Text = "是否开机启动";
+            _settings_chboxIsStartWhenWindowsStartup.Checked = AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup;
+            _settings_chboxIsStartWhenWindowsStartup.Width = 150;
+            dialogPanelSakura.Controls.Add(_settings_chboxIsStartWhenWindowsStartup);
 
             UkagakaLabel blank1 = new UkagakaLabel();
             blank1.Text = string.Empty;
             dialogPanelSakura.Controls.Add(blank1);
+            dialogPanelSakura.Controls.Add(_mainMenu_confirmMenu);
+
+            UkagakaLabel blank2 = new UkagakaLabel();
+            blank2.Text = string.Empty;
+            dialogPanelSakura.Controls.Add(blank2);
 
             AddReturnMenuItem();
         }
@@ -58,7 +71,31 @@ namespace Shell
         void _settings_redmine_confirmMenu_Click(object sender, EventArgs e)
         {
             AppSettings.Settings.Instance.Redmine_SetApiKey(_mainMenu_txtApiKey.Text);
-            LoadIssueCountInfo();
+            UpdateIssueInfo();
+
+            string registryKeyValue = "Ukagaka";
+            if (_settings_chboxIsStartWhenWindowsStartup.Checked != AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup)
+            {
+                if (_settings_chboxIsStartWhenWindowsStartup.Checked)
+                {
+                    try
+                    {
+                        RegistryKey run = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+                        run.SetValue(registryKeyValue, Application.ExecutablePath, RegistryValueKind.String);
+                        run.Close();
+                    }
+                    catch { }
+                }
+                else
+                {
+                    RegistryKey run = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+                    if (run.GetValue(registryKeyValue) != null)
+                        run.DeleteValue(registryKeyValue);
+                    run.Close();
+                }
+                AppSettings.Settings.Instance.Redmine_SetIsStartWhenWindowsStartup(_settings_chboxIsStartWhenWindowsStartup.Checked);
+            }
+
             LoadMenu(MenuEnum.MainMenu);
         }
     }

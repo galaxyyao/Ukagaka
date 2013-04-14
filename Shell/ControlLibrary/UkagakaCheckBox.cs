@@ -6,13 +6,11 @@ using System.Windows.Forms;
 using System.Drawing;
 using AppSettings;
 
-using System.Windows.Forms.VisualStyles;
-
 namespace Shell
 {
-    public class UkagakaComboBox : ComboBox
+    public class UkagakaCheckBox:CheckBox
     {
-        public UkagakaComboBox()
+        public UkagakaCheckBox()
         {
             Settings settings = Settings.Instance;
             Font = new Font("Arial", settings.Shell_DialogPanelFontSize);

@@ -4,21 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
-using Redmine;
+using Ghost;
 using System.Threading;
 using System.Diagnostics;
 using AppSettings;
+using System.Timers;
+using Common;
+using System.ComponentModel;
 
 namespace Shell
 {
     public partial class Ukagaka
     {
-        private CheckResult _checkResult;
         public UkagakaLabel _lblOpenIssue;
         public UkagakaLabel _lblToCloseIssue;
 
         private UkagakaTextBox _mainMenu_txtApiKey;
         private UkagakaMenu _mainMenu_confirmMenu;
+
+        private BackgroundWorker _issueUpdateWorker = new BackgroundWorker();
 
         private void MainMenu_AddRedmineMenuItems()
         {
@@ -45,7 +49,9 @@ namespace Shell
             }
             else
             {
-                LoadIssueCountInfo();
+                _issueUpdateWorker.DoWork += new DoWorkEventHandler(_issueUpdateWorker_DoWork);
+                _issueUpdateWorker.RunWorkerAsync();
+                StartScheduledUpdate();
             }
 
             UkagakaLabel blank1 = new UkagakaLabel();
@@ -58,6 +64,15 @@ namespace Shell
             dialogPanelSakura.Controls.Add(_lblToCloseIssue);
             dialogPanelSakura.Controls.Add(blank1);
             dialogPanelSakura.Controls.Add(redmineMenu);
+        }
+
+        void _issueUpdateWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (!Ghost.Ghost.Instance.RedmineService.IsSync)
+            {
+                Thread.Sleep(1000);
+            }
+            UpdateIssueInfo();
         }
 
         void redmineMenu_Click(object sender, EventArgs e)
@@ -139,7 +154,8 @@ namespace Shell
             AppSettings.Settings.Instance.Redmine_SetApiKey(_mainMenu_txtApiKey.Text);
             popupPanel1.Controls.Clear();
             popupPanel1.Hide();
-            LoadIssueCountInfo();
+            UpdateIssueInfo();
+            StartScheduledUpdate();
         }
 
         void txtApiKey_Click(object sender, EventArgs e)
@@ -147,43 +163,48 @@ namespace Shell
             _mainMenu_txtApiKey.Text = string.Empty;
         }
 
-        private void LoadIssueCountInfo()
+        public void UpdateIssueInfo()
         {
-            Thread issueThread = new Thread(new ThreadStart(
-                () =>
-                {
-                    MyIssuesChecker checker = new MyIssuesChecker();
-                    _checkResult = checker.Check();
-                    UpdateIssueCount(_checkResult);
-                }
-            ));
-            issueThread.Start();
+            if (InvokeRequired)
+            {
+                Invoke(new Action(
+                    () => UpdateIssueInfo()));
+                return;
+            }
+
+            Ghost.Redmine.CheckResult result = Ghost.Ghost.Instance.RedmineService.CurrentResult;
+
+            _lblOpenIssue.Text = string.Format("待完成的任务：{0}", result.OpenIssueCount);
+            if (result.NearestDue == -1 || result.NearestDue > 3)
+                _lblOpenIssue.BackColor = Color.Green;
+            else if (result.NearestDue >= 1)
+            {
+                _lblOpenIssue.BackColor = Color.Yellow;
+                _lblOpenIssue.ForeColor = ColorTranslator.FromHtml("#111111");
+            }
+            else if (result.NearestDue >= 0)
+                _lblOpenIssue.BackColor = Color.Orange;
+            else
+                _lblOpenIssue.BackColor = Color.Red;
+
+            _lblToCloseIssue.Text = string.Format("待关闭的任务：{0}", result.ToCloseIssueCount);
+            _lblToCloseIssue.BackColor = Color.Green;
         }
 
-        public void UpdateIssueCount(CheckResult result)
-        {
-            if (this.InvokeRequired)
-            {
-                Invoke(new Action<CheckResult>(UpdateIssueCount), result);
-            }
-            else
-            {
-                _lblOpenIssue.Text = string.Format("待完成的任务：{0}", result.OpenIssueCount);
-                if (result.NearestDue == -1 || result.NearestDue > 3)
-                    _lblOpenIssue.BackColor = Color.Green;
-                else if (result.NearestDue >= 1)
-                {
-                    _lblOpenIssue.BackColor = Color.Yellow;
-                    _lblOpenIssue.ForeColor = ColorTranslator.FromHtml("#111111");
-                }
-                else if (result.NearestDue >= 0)
-                    _lblOpenIssue.BackColor = Color.Orange;
-                else
-                    _lblOpenIssue.BackColor = Color.Red;
 
-                _lblToCloseIssue.Text = string.Format("待关闭的任务：{0}", result.ToCloseIssueCount);
-                _lblToCloseIssue.BackColor = Color.Green;
-            }
+        private System.Timers.Timer _timer;
+
+        private void StartScheduledUpdate()
+        {
+            _timer = new System.Timers.Timer(1000*60);//Update UI every minute
+            _timer.Elapsed += _timer_Elapsed;
+            _timer.AutoReset = true;
+            _timer.Start();
+        }
+
+        void _timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            UpdateIssueInfo();
         }
     }
 }

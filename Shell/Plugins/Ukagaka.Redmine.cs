@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using AppSettings;
 
 namespace Shell
 {
@@ -95,6 +96,20 @@ namespace Shell
         public void LoadRedmineDetailMenu()
         {
             ClearMenu();
+            Settings settings = Settings.Instance;
+
+            UkagakaComboBox redmineTaskFilter1 = new UkagakaComboBox();
+            redmineTaskFilter1.Width = 200;
+            dialogPanelSakura.Controls.Add(redmineTaskFilter1);
+
+            UkagakaComboBox redmineTaskFilter2 = new UkagakaComboBox();
+            redmineTaskFilter2.Width = 200;
+            dialogPanelSakura.Controls.Add(redmineTaskFilter2);
+
+            UkagakaListBox taskResultList = new UkagakaListBox();
+            taskResultList.Width = settings.Shell_SakuraDialogPanelWidth - 30;
+            taskResultList.Height = settings.Shell_SakuraDialogPanelHeight - 140;
+            dialogPanelSakura.Controls.Add(taskResultList);
 
             AddReturnMenuItem();
         }

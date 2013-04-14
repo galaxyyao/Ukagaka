@@ -20,7 +20,7 @@ namespace Shell
             lblWelcome.Width = 250;
             dialogPanelSakura.Controls.Add(lblWelcome);
 
-            if (AppSettings.Settings.Instance.IsRedmineEnabled)
+            if (AppSettings.Settings.Instance.Service_IsRedmineEnabled)
             {
                 MainMenu_AddRedmineMenuItems();
             }

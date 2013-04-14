@@ -25,7 +25,13 @@ namespace AppSettings
             internal set;
         }
 
-        public int Redmine_CheckIssueIntervalMinutes
+        public int Redmine_CheckIssueIntervalMilliSeconds
+        {
+            get;
+            internal set;
+        }
+
+        public bool Redmine_IsStartWhenWindowsStartup
         {
             get;
             internal set;
@@ -38,13 +44,21 @@ namespace AppSettings
 
             Redmine_Host = ExtXML.GetFirstDescendantsValue<string>(_redmineProfile, "Host");
             Redmine_ApiKey = ExtXML.GetFirstDescendantsValue<string>(_redmineProfile, "ApiKey");
-            Redmine_CheckIssueIntervalMinutes = 1000 * 60 * ExtXML.GetFirstDescendantsValue<int>(_redmineProfile, "CheckIssueIntervalMinutes");
+            Redmine_CheckIssueIntervalMilliSeconds = 1000 * 60 * ExtXML.GetFirstDescendantsValue<int>(_redmineProfile, "CheckIssueIntervalMinutes");
+            Redmine_IsStartWhenWindowsStartup = ExtXML.GetFirstDescendantsValue<Boolean>(_redmineProfile, "IsStartWhenWindowsStartup");
         }
 
         public void Redmine_SetApiKey(string apiKey)
         {
             Redmine_ApiKey = apiKey;
             _redmineProfile.Root.Element("ApiKey").Value = apiKey;
+            _redmineProfile.Save(_redmineProfilePath);
+        }
+
+        public void Redmine_SetIsStartWhenWindowsStartup(bool isStartWhenWindowsStartup)
+        {
+            Redmine_IsStartWhenWindowsStartup = isStartWhenWindowsStartup;
+            _redmineProfile.Root.Element("IsStartWhenWindowsStartup").Value = isStartWhenWindowsStartup.ToString();
             _redmineProfile.Save(_redmineProfilePath);
         }
     }

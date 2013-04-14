@@ -42,6 +42,22 @@
   <ItemGroup>
     <Compile Include="Ghost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redmine.CheckResult.cs" />
+    <Compile Include="Redmine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppSettings\AppSettings.csproj">
+      <Project>{2BFA817E-E1DC-4B25-BCCC-3F0A1632A7F3}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{BE863D54-5470-4BB4-BEA8-3999D4FE2328}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Third-parties\Redmine.Net.Api\Redmine.Net.Api.csproj">
+      <Project>{F99E4720-D2A0-461B-A454-E6169BFA8C38}</Project>
+      <Name>Redmine.Net.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
