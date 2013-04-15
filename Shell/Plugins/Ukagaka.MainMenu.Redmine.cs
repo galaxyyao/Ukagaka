@@ -197,7 +197,7 @@ namespace Shell
 
         private void StartScheduledUpdate()
         {
-            _timer = new System.Timers.Timer(1000*60);//Update UI every minute
+            _timer = new System.Timers.Timer(1000 * 30);//Update UI every half minute
             _timer.Elapsed += _timer_Elapsed;
             _timer.AutoReset = true;
             _timer.Start();

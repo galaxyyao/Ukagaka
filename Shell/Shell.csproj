@@ -78,6 +78,12 @@
     <Compile Include="ControlLibrary\UkagakaTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Plugins\Floater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Floater.Designer.cs">
+      <DependentUpon>Floater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\Ukagaka.BaseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Configs\Shell.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

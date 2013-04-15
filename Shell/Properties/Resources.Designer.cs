@@ -59,19 +59,5 @@ namespace Shell.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap surface0000 {
-            get {
-                object obj = ResourceManager.GetObject("surface0000", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap surface1101 {
-            get {
-                object obj = ResourceManager.GetObject("surface1101", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

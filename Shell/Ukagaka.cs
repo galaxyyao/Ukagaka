@@ -19,6 +19,7 @@ namespace Shell
         private ContextMenu _contextMenu;
 
         private List<UkagakaForm> loadedForms = new List<UkagakaForm>();
+        private Floater _floater;
 
         public Ukagaka()
         {
@@ -33,13 +34,20 @@ namespace Shell
             InitializeControls();
             InitializeMenuTable();
             LoadMenu(MenuEnum.MainMenu);
-
             HookManager.KeyDown+=new KeyEventHandler(HookManager_KeyDown);
+
+            //Floater
+
+            _floater = new Floater();
+            if (AppSettings.Settings.Instance.Redmine_IsFloaterShown)
+                _floater.Show();
+            else
+                _floater.Hide();
         }
 
         private void Shell_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            AppSettings.Settings.Instance.Shell_SaveSettings();
             _icon.Visible = false;
         }
 
@@ -65,6 +73,7 @@ namespace Shell
 
         #endregion
 
+        #region initialize shell 
         private void InitializeNotifyIcon()
         {
             _icon = new System.Windows.Forms.NotifyIcon();
@@ -114,8 +123,8 @@ namespace Shell
             this.dialogPanelKero.Size = new Size(settings.Shell_KeroDialogPanelWidth, settings.Shell_KeroDialogPanelHeight);
 
             //set pic source
-            this.picSakura.Image = global::Shell.Properties.Resources.surface0000;
-            this.picKero.Image = global::Shell.Properties.Resources.surface1101;
+            this.picSakura.Image = Image.FromFile("Resources/Images/surface0000.png");
+            this.picKero.Image = Image.FromFile("Resources/Images/surface1101.png");
 
             //set Dialog Panel
             dialogPanelSakura.BackColor = System.Drawing.ColorTranslator.FromHtml(settings.Shell_DialogPanelBackColor);
@@ -126,6 +135,10 @@ namespace Shell
             dialogPanelKero.Padding = new Padding(10, 10, 10, 10);
             dialogPanelKero.Hide();
         }
+
+        #endregion
+
+        #region shell event handling
 
         private void Icon_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -165,5 +178,7 @@ namespace Shell
             Settings.Instance.Shell_SaveSettings();
             Close();
         }
+
+        #endregion
     }
 }

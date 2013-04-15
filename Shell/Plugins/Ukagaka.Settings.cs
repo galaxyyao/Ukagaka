@@ -12,6 +12,7 @@ namespace Shell
     {
         private UkagakaMenu _settings_redmineMenu;
         private UkagakaCheckBox _settings_chboxIsStartWhenWindowsStartup;
+        private UkagakaCheckBox _settings_chboxIsFloaterShown;
 
         public void LoadSettingMenu()
         {
@@ -56,6 +57,12 @@ namespace Shell
             _settings_chboxIsStartWhenWindowsStartup.Width = 150;
             dialogPanelSakura.Controls.Add(_settings_chboxIsStartWhenWindowsStartup);
 
+            _settings_chboxIsFloaterShown = new UkagakaCheckBox();
+            _settings_chboxIsFloaterShown.Text = "是否显示浮动窗口";
+            _settings_chboxIsFloaterShown.Checked = AppSettings.Settings.Instance.Redmine_IsFloaterShown;
+            _settings_chboxIsFloaterShown.Width = 150;
+            dialogPanelSakura.Controls.Add(_settings_chboxIsFloaterShown);
+
             UkagakaLabel blank1 = new UkagakaLabel();
             blank1.Text = string.Empty;
             dialogPanelSakura.Controls.Add(blank1);
@@ -94,6 +101,19 @@ namespace Shell
                     run.Close();
                 }
                 AppSettings.Settings.Instance.Redmine_SetIsStartWhenWindowsStartup(_settings_chboxIsStartWhenWindowsStartup.Checked);
+            }
+
+            if (_settings_chboxIsFloaterShown.Checked != AppSettings.Settings.Instance.Redmine_IsFloaterShown)
+            {
+                if (_settings_chboxIsFloaterShown.Checked)
+                {
+                    _floater.Show();
+                }
+                else
+                {
+                    _floater.Hide();
+                }
+                AppSettings.Settings.Instance.Redmine_SetIsFloaterShown(_settings_chboxIsFloaterShown.Checked);
             }
 
             LoadMenu(MenuEnum.MainMenu);
