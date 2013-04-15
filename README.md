@@ -2,6 +2,7 @@ Ukagaka
 =======
 
 .NET version Ukagaka
+
 This project is created since I need to create a reminder to issue progress in Redmine(A project management web site, my company use it for project management).
 But I'd like to add more features.
 
@@ -9,14 +10,18 @@ Although this project is named after Ukagaka, it uses no source code from origin
 
 Third-party resources used in this project:
 
-1. Kikka (Shell)
-I cannot find under what license image resources of Kikka are. If it violate any privacy, please kindly let me know.
+1. Kikka (Shell):
 
-2. Redmine.Net.Api
+This image resource is only for my personal test use. If you want to republish it with image resource with your own material
+
+2. Redmine.Net.Api:
+
 Redmine API is under Apache 2 open-source license. license file has been added to project folder
 
-3. Drag & drop control
+3. Drag & drop control:
+
 Drag & drop control comes from http://www.codeproject.com/Articles/20483/Drag-and-Drop-Windows-Form-Controls-Design-UI-at-R, which is under The Code Project Open License (CPOL).
+
 
 Windows environment and .NET Framework 4.0 is required for running.
 
