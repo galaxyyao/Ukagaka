@@ -12,7 +12,7 @@ Third-party resources used in this project:
 
 1. Kikka (Shell):
 
-This image resource is only for my personal test use. If you want to republish it with image resource with your own material
+This image resource is only for my personal test use. If you want to republish it, please replace them with image resources which you have right to use.
 
 2. Redmine.Net.Api:
 
