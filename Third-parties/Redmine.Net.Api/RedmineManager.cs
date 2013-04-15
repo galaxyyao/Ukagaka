@@ -424,7 +424,8 @@ namespace Redmine.Net.Api
                 }
                 catch (WebException webException)
                 {
-                    HandleWebException(webException, type.Name);
+                    //HandleWebException(webException, type.Name);
+                    return null;
                 }
                 return null;
             }

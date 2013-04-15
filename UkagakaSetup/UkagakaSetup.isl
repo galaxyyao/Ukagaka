@@ -341,17 +341,17 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>AppSettings.dll</td><td>{FCA28158-6884-4DD2-93BD-216867B8DE82}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td>appsettings.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Common.dll</td><td>{7C6CC310-55C4-4465-A391-A628D1BAFAD6}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td>common.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Ghost.dll</td><td>{3B9E3B2D-A864-426E-9FAA-7D701CC09048}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td>ghost.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT</td><td>{7CE1BAB0-E8A8-4E24-A8AB-67C5BFCE5FFB}</td><td>UKAGAKASETUPFILES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{869EBF3C-3E60-4BCC-B1C9-3802CD049E51}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{3DB9AA3F-ED44-40EC-8E50-75F79F059150}</td><td>CONFIGS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{2CC40C4B-077B-45AE-8F99-40E75BD7D852}</td><td>PLUGINS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{EF1E4DBA-3A7A-4598-812B-C55FE3448E7D}</td><td>RESOURCES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT5</td><td>{BF0F8C0C-C526-4E55-8882-AB0F5BA839A8}</td><td>IMAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Redmine.Net.Api.dll</td><td>{DC045E7C-BE49-4BD6-B9CF-3BFB44283EB8}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td>redmine.net.api.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Shell.exe</td><td>{5F17F6FC-DD16-40B0-A97C-F0D6AE65FB54}</td><td>UKAGAKA_V1.0.0</td><td>2</td><td/><td>shell.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>AppSettings.dll</td><td>{269BF2B5-7B6B-461B-B26A-4DC4E9A96EAA}</td><td>INSTALLDIR</td><td>2</td><td/><td>appsettings.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Common.dll</td><td>{125AD6C9-65EF-43E4-A91B-FBA939394B7B}</td><td>INSTALLDIR</td><td>2</td><td/><td>common.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Ghost.dll</td><td>{D78237BE-5095-46C7-A86B-A44BB091FF04}</td><td>INSTALLDIR</td><td>2</td><td/><td>ghost.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Gma.UserActivityMonitor.dll</td><td>{868B53D3-761B-4825-9E16-4D25D606A7CE}</td><td>INSTALLDIR</td><td>2</td><td/><td>gma.useractivitymonitor.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{2154AAC8-BBD9-4378-82EF-79CE3254AEF4}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{F8DCD664-E7B0-4C5F-8C08-6E0D84153CA0}</td><td>CONFIGS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{245F8959-7246-46C6-8A0B-179792444E42}</td><td>PLUGINS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{40A5BB2C-78A4-43C8-B275-B56A6CFBE2CB}</td><td>RESOURCES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{58191DD0-2F76-4504-BF47-B8A7EA17CAA3}</td><td>IMAGES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Redmine.Net.Api.dll</td><td>{42C64D8F-6F29-4FBB-9961-2A84281CD126}</td><td>INSTALLDIR</td><td>2</td><td/><td>redmine.net.api.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Shell.exe</td><td>{70854E65-594E-4576-BAC7-3F763C05C415}</td><td>INSTALLDIR</td><td>2</td><td/><td>shell.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1061,8 +1061,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
-		<row><td>RESOURCES</td><td>ISX_DEFAULTCOMPONENT4</td></row>
-		<row><td>UKAGAKASETUPFILES</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>RESOURCES</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1145,7 +1144,7 @@
 		<row><td>ALLUSERSPROFILE</td><td>TARGETDIR</td><td>.:ALLUSE~1|All Users</td><td/><td>0</td><td/></row>
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
-		<row><td>CONFIGS</td><td>UKAGAKA_V1.0.0</td><td>Configs</td><td/><td>0</td><td/></row>
+		<row><td>CONFIGS</td><td>INSTALLDIR</td><td>Configs</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
 		<row><td>DATABASEDIR</td><td>ISYourDataBaseDir</td><td>.</td><td/><td>0</td><td/></row>
@@ -1170,7 +1169,7 @@
 		<row><td>PrintHoodFolder</td><td>TARGETDIR</td><td>.:PRINTH~1|PrintHood</td><td/><td>0</td><td/></row>
 		<row><td>ProgramFilesFolder</td><td>TARGETDIR</td><td>.:PROGRA~1|program files</td><td/><td>0</td><td/></row>
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
-		<row><td>RESOURCES</td><td>UKAGAKA_V1.0.0</td><td>RESOUR~1|Resources</td><td/><td>0</td><td/></row>
+		<row><td>RESOURCES</td><td>INSTALLDIR</td><td>RESOUR~1|Resources</td><td/><td>0</td><td/></row>
 		<row><td>RecentFolder</td><td>TARGETDIR</td><td>.:Recent</td><td/><td>0</td><td/></row>
 		<row><td>SendToFolder</td><td>TARGETDIR</td><td>.:SendTo</td><td/><td>3</td><td/></row>
 		<row><td>StartMenuFolder</td><td>TARGETDIR</td><td>.:STARTM~1|Start Menu</td><td/><td>3</td><td/></row>
@@ -1181,8 +1180,6 @@
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>UKAGAKA</td><td>KANCART</td><td>Ukagaka</td><td/><td>0</td><td/></row>
-		<row><td>UKAGAKASETUPFILES</td><td>INSTALLDIR</td><td>UKAGAK~1|UkagakaSetupFiles</td><td/><td>0</td><td/></row>
-		<row><td>UKAGAKA_V1.0.0</td><td>UKAGAKASETUPFILES</td><td>UKAGAK~1|Ukagaka v1.0.0</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
@@ -1882,12 +1879,12 @@
 		<row><td>AlwaysInstall</td><td>AppSettings.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Common.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Ghost.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Gma.UserActivityMonitor.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT4</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT5</td></row>
 		<row><td>AlwaysInstall</td><td>Redmine.Net.Api.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Shell.exe</td></row>
 	</table>
@@ -1904,18 +1901,20 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>appsettings.dll</td><td>AppSettings.dll</td><td>APPSET~1.DLL|AppSettings.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\AppSettings.dll</td><td>1</td><td/></row>
-		<row><td>common.dll</td><td>Common.dll</td><td>Common.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Common.dll</td><td>1</td><td/></row>
-		<row><td>ghost.dll</td><td>Ghost.dll</td><td>Ghost.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Ghost.dll</td><td>1</td><td/></row>
-		<row><td>kikka.ico</td><td>ISX_DEFAULTCOMPONENT1</td><td>kikka.ico</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\kikka.ico</td><td>1</td><td/></row>
-		<row><td>redmine.net.api.dll</td><td>Redmine.Net.Api.dll</td><td>REDMIN~1.DLL|Redmine.Net.Api.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Redmine.Net.Api.dll</td><td>1</td><td/></row>
-		<row><td>redmine.xml</td><td>ISX_DEFAULTCOMPONENT3</td><td>Redmine.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Configs\Plugins\Redmine.xml</td><td>1</td><td/></row>
-		<row><td>services.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>Services.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Configs\Services.xml</td><td>1</td><td/></row>
-		<row><td>shell.exe</td><td>Shell.exe</td><td>Shell.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Shell.exe</td><td>1</td><td/></row>
-		<row><td>shell.exe.config</td><td>ISX_DEFAULTCOMPONENT1</td><td>SHELLE~1.CON|Shell.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Shell.exe.config</td><td>1</td><td/></row>
-		<row><td>shell.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>Shell.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Configs\Shell.xml</td><td>1</td><td/></row>
-		<row><td>surface0000.png</td><td>ISX_DEFAULTCOMPONENT5</td><td>SURFAC~1.PNG|surface0000.png</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Resources\Images\surface0000.png</td><td>1</td><td/></row>
-		<row><td>surface1101.png</td><td>ISX_DEFAULTCOMPONENT5</td><td>SURFAC~1.PNG|surface1101.png</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Resources\Images\surface1101.png</td><td>1</td><td/></row>
+		<row><td>appsettings.dll</td><td>AppSettings.dll</td><td>APPSET~1.DLL|AppSettings.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\AppSettings.dll</td><td>1</td><td/></row>
+		<row><td>common.dll</td><td>Common.dll</td><td>Common.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Common.dll</td><td>1</td><td/></row>
+		<row><td>ghost.dll</td><td>Ghost.dll</td><td>Ghost.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ghost.dll</td><td>1</td><td/></row>
+		<row><td>gma.useractivitymonitor.dll</td><td>Gma.UserActivityMonitor.dll</td><td>GMAUSE~1.DLL|Gma.UserActivityMonitor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Gma.UserActivityMonitor.dll</td><td>1</td><td/></row>
+		<row><td>kikka.ico</td><td>ISX_DEFAULTCOMPONENT</td><td>kikka.ico</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\kikka.ico</td><td>1</td><td/></row>
+		<row><td>readme.txt</td><td>ISX_DEFAULTCOMPONENT</td><td>Readme.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Readme.txt</td><td>1</td><td/></row>
+		<row><td>redmine.net.api.dll</td><td>Redmine.Net.Api.dll</td><td>REDMIN~1.DLL|Redmine.Net.Api.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Redmine.Net.Api.dll</td><td>1</td><td/></row>
+		<row><td>redmine.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>Redmine.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Configs\Plugins\Redmine.xml</td><td>1</td><td/></row>
+		<row><td>services.xml</td><td>ISX_DEFAULTCOMPONENT1</td><td>Services.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Configs\Services.xml</td><td>1</td><td/></row>
+		<row><td>shell.exe</td><td>Shell.exe</td><td>Shell.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Shell.exe</td><td>1</td><td/></row>
+		<row><td>shell.exe.config</td><td>ISX_DEFAULTCOMPONENT</td><td>SHELLE~1.CON|Shell.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Shell.exe.config</td><td>1</td><td/></row>
+		<row><td>shell.xml</td><td>ISX_DEFAULTCOMPONENT1</td><td>Shell.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Configs\Shell.xml</td><td>1</td><td/></row>
+		<row><td>surface0000.png</td><td>ISX_DEFAULTCOMPONENT4</td><td>SURFAC~1.PNG|surface0000.png</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Resources\Images\surface0000.png</td><td>1</td><td/></row>
+		<row><td>surface1101.png</td><td>ISX_DEFAULTCOMPONENT4</td><td>SURFAC~1.PNG|surface1101.png</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Resources\Images\surface1101.png</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2172,17 +2171,17 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>AppSettings.dll</td><td/><td/><td>_500DF6B0_7D41_4D1E_918C_B88492A1E80A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Common.dll</td><td/><td/><td>_3D393161_A68D_44BE_AADF_FE002AEA3EB3_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Ghost.dll</td><td/><td/><td>_F574B1A5_4FD6_4FCB_B716_315E56FF1B4B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_7693BE3E_40C9_446F_BFF4_E69AC3119AFA_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_B712C127_03F7_4AF9_B6EB_EEC952F4E4B4_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_E57A1529_E55E_478B_AEE6_668EC805AF78_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_D80DDD6E_B266_419B_A36B_62E114CEA1C1_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_729A4DDB_D885_4FDC_BEF6_E29307CBF982_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT5</td><td/><td/><td>_15C9FE7A_07C5_4786_9A37_BE37EEFF4D2D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Redmine.Net.Api.dll</td><td/><td/><td>_B0FFE583_02B0_4C70_A135_9A40C9F37CD0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Shell.exe</td><td/><td/><td>_15A1AF2D_A3C9_42BE_955D_0C75C5B8197B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>AppSettings.dll</td><td/><td/><td>_26F35157_DDB1_45BF_833D_3D8DB99F6DA4_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Common.dll</td><td/><td/><td>_8C6ADD4A_52DD_4AB2_BA90_3DCCFE72ED25_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Ghost.dll</td><td/><td/><td>_C55B05DB_3D68_4650_8DDC_D246DC683348_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Gma.UserActivityMonitor.dll</td><td/><td/><td>_8E839A3F_7097_464B_B130_5E62D2B324D8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_E843A8C0_BA9A_4750_AA6A_FE4DC37B8756_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_739AB7E9_FED1_40DE_ACC2_4C3A316172B9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_3E47A900_520B_40CE_9548_9D74049BC082_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_276178E2_920F_41BC_B514_F8E5E2CD2EAE_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_EFA48EC2_AAD6_43DE_9749_84E71233C76B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Redmine.Net.Api.dll</td><td/><td/><td>_C66DF66F_A4B4_4825_B105_2C7F91D29B37_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Shell.exe</td><td/><td/><td>_CC915D7D_DE4A_473D_B5DB_056812EAE364_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3623,6 +3622,7 @@
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>2049018400</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>2049018400</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Launch Ukagaka</td><td>0</td><td/><td>2049000288</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>LAUNCH~1.EXE|Launch Shell.exe</td><td>0</td><td/><td>2049026353</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>2049018400</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>2049018400</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>2049018400</td></row>
@@ -4023,6 +4023,7 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>C:\Documents\Project\Ukagaka\Shell\kikka.ico</td><td>0</td></row>
 		<row><td>Shell.exe_18375E1D043044F7BA7FAE51F7AE2C68.exe</td><td/><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Ukagaka v1.0.0\Shell.exe</td><td>0</td></row>
+		<row><td>Shell.exe_4AC75723E7284921A0C121940736869B.exe</td><td/><td>C:\Documents\Project\Ukagaka\UkagakaSetupFiles\Shell.exe</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4155,7 +4156,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{2FFFF317-7C46-4FA7-84BE-B4B4A35108B3}</td></row>
 		<row><td>ISUSSignature</td><td>{E54734A4-F3AF-4556-8EB0-EE6637688E83}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewUI,viewRelease</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewUI,viewRelease,viewISToday,viewAppV</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4533,7 +4534,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]UkagakaSetupFiles\Ukagaka v1.0.0\Shell.exe</td><td/></row>
 		<row><td>ProductCode</td><td>{19CD25F1-2BC2-4FF8-990C-8D5C93C779F8}</td><td/></row>
 		<row><td>ProductName</td><td>Ukagaka</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0000</td><td/></row>
+		<row><td>ProductVersion</td><td>1.1.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4610,8 +4611,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>Shell.exe</td><td/><td>kancart</td><td>2</td></row>
-		<row><td>FileKey2</td><td>Shell.exe</td><td/><td>ukagaka</td><td>2</td></row>
 		<row><td>Shell.exe</td><td>Shell.exe</td><td/><td>ukagaka</td><td>2</td></row>
 	</table>
 
@@ -4698,7 +4697,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Shell.exe</td><td>ukagaka</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Shell.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Shell.exe_18375E1D043044F7BA7FAE51F7AE2C68.exe</td><td>1</td><td>1</td><td>UKAGAKA_V1.0.0</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Shell.exe</td><td>ukagaka</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Shell.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Shell.exe_4AC75723E7284921A0C121940736869B.exe</td><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

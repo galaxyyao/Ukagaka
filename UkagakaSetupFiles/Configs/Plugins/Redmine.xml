@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Redmine>
   <Host>p.honestwalker.com</Host>
   <ApiKey></ApiKey>
   <CheckIssueIntervalMinutes>10</CheckIssueIntervalMinutes>
   <IsStartWhenWindowsStartup>False</IsStartWhenWindowsStartup>
+  <IsFloaterShown>True</IsFloaterShown>
+  <FloaterLeft>-1</FloaterLeft>
 </Redmine>

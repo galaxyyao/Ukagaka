@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Profile>
   <IconPath>kikka.ico</IconPath>
-  <IsRedmineEnabled>True</IsRedmineEnabled>
+  <!--If you want to change shortcut for hide/show windows state, you can change this value-->
+  <!--For example, if you want to use Ctrl+1, you can change this value to D1-->
+  <WindowsStateChangeShortcut>Oemtilde</WindowsStateChangeShortcut>
   <Sakura>
     <LastLocationX>1250</LastLocationX>
     <LastLocationY>650</LastLocationY>

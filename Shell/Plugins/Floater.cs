@@ -83,7 +83,7 @@ namespace Shell
             Ghost.Redmine.CheckResult result = Ghost.Ghost.Instance.RedmineService.CurrentResult;
 
             lblOpen.Text = result.OpenIssueCount.ToString();
-            lblToClose.Text = result.OpenIssueCount.ToString();
+            lblToClose.Text = result.ToCloseIssueCount.ToString();
             lblOpen.BackColor = (result.NearestDue < 2) ? Color.Red : Color.Orange;
             _updateInterval = 1000 * 30;
         }

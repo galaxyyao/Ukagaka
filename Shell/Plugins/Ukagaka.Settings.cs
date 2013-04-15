@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using Microsoft.Win32;
+using System.IO;
+using System.Reflection;
 
 namespace Shell
 {
@@ -49,13 +51,13 @@ namespace Shell
 
             dialogPanelSakura.Controls.Add(lblGuide1);
             dialogPanelSakura.Controls.Add(_mainMenu_txtApiKey);
-            
 
-            _settings_chboxIsStartWhenWindowsStartup = new UkagakaCheckBox();
-            _settings_chboxIsStartWhenWindowsStartup.Text = "是否开机启动";
-            _settings_chboxIsStartWhenWindowsStartup.Checked = AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup;
-            _settings_chboxIsStartWhenWindowsStartup.Width = 150;
-            dialogPanelSakura.Controls.Add(_settings_chboxIsStartWhenWindowsStartup);
+
+            //_settings_chboxIsStartWhenWindowsStartup = new UkagakaCheckBox();
+            //_settings_chboxIsStartWhenWindowsStartup.Text = "是否开机启动";
+            //_settings_chboxIsStartWhenWindowsStartup.Checked = AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup;
+            //_settings_chboxIsStartWhenWindowsStartup.Width = 150;
+            //dialogPanelSakura.Controls.Add(_settings_chboxIsStartWhenWindowsStartup);
 
             _settings_chboxIsFloaterShown = new UkagakaCheckBox();
             _settings_chboxIsFloaterShown.Text = "是否显示浮动窗口";
@@ -80,28 +82,23 @@ namespace Shell
             AppSettings.Settings.Instance.Redmine_SetApiKey(_mainMenu_txtApiKey.Text);
             UpdateIssueInfo();
 
-            string registryKeyValue = "Ukagaka";
-            if (_settings_chboxIsStartWhenWindowsStartup.Checked != AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup)
-            {
-                if (_settings_chboxIsStartWhenWindowsStartup.Checked)
-                {
-                    try
-                    {
-                        RegistryKey run = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-                        run.SetValue(registryKeyValue, Application.ExecutablePath, RegistryValueKind.String);
-                        run.Close();
-                    }
-                    catch { }
-                }
-                else
-                {
-                    RegistryKey run = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-                    if (run.GetValue(registryKeyValue) != null)
-                        run.DeleteValue(registryKeyValue);
-                    run.Close();
-                }
-                AppSettings.Settings.Instance.Redmine_SetIsStartWhenWindowsStartup(_settings_chboxIsStartWhenWindowsStartup.Checked);
-            }
+            //string registryKeyValue = "Ukagaka";
+            //if (_settings_chboxIsStartWhenWindowsStartup.Checked != AppSettings.Settings.Instance.Redmine_IsStartWhenWindowsStartup)
+            //{
+            //    if (_settings_chboxIsStartWhenWindowsStartup.Checked)
+            //    {
+                    
+
+            //    }
+            //    else
+            //    {
+            //        RegistryKey run = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            //        if (run.GetValue(registryKeyValue) != null)
+            //            run.DeleteValue(registryKeyValue);
+            //        run.Close();
+            //    }
+            //    AppSettings.Settings.Instance.Redmine_SetIsStartWhenWindowsStartup(_settings_chboxIsStartWhenWindowsStartup.Checked);
+            //}
 
             if (_settings_chboxIsFloaterShown.Checked != AppSettings.Settings.Instance.Redmine_IsFloaterShown)
             {

@@ -7,6 +7,7 @@ using Redmine.Net.Api;
 using Redmine.Net.Api.Types;
 using AppSettings;
 using System.Threading;
+using Common;
 
 namespace Ghost
 {
@@ -46,7 +47,12 @@ namespace Ghost
 
         public void UpdateIssue()
         {
-            CurrentResult.MyIssues = _manager.GetObjectList<Issue>(paraAssignedToMe).ToList();
+            while (!ExtPing.GetPingHostResult("p.honestwalker.com"))
+            {
+                Thread.Sleep(1000);
+            }
+            var issues = _manager.GetObjectList<Issue>(paraAssignedToMe);
+            CurrentResult.MyIssues = issues.ToList();
             IsSync = true;
             StartScheduledUpdate();
         }
