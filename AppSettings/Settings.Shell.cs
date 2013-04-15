@@ -19,6 +19,12 @@ namespace AppSettings
             private set;
         }
 
+        public string Shell_WindowsStateChangeShortcut
+        {
+            get;
+            private set;
+        }
+
         #region Location Properties
         public int Shell_SakuraLocationX
         {
@@ -180,6 +186,7 @@ namespace AppSettings
             _controlNameDictionary.Add(ControlEnum.KeroDialogPanel, "KeroDialogPanel");
 
             Shell_IconPath = ExtXML.GetFirstDescendantsValue<string>(_shellConfigs, "IconPath");
+            Shell_WindowsStateChangeShortcut = ExtXML.GetFirstDescendantsValue<string>(_shellConfigs, "WindowsStateChangeShortcut");
 
             #region Location
             string elementName1 = "LastLocationX";

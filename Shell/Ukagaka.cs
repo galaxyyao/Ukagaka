@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
 using AppSettings;
+using Gma.UserActivityMonitor;
 
 namespace Shell
 {
@@ -32,6 +33,8 @@ namespace Shell
             InitializeControls();
             InitializeMenuTable();
             LoadMenu(MenuEnum.MainMenu);
+
+            HookManager.KeyDown+=new KeyEventHandler(HookManager_KeyDown);
         }
 
         private void Shell_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,6 +42,28 @@ namespace Shell
 
             _icon.Visible = false;
         }
+
+        #region key hook
+
+        private bool _shell_ctrlKeyDown = false;
+
+        private void HookManager_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (_shell_ctrlKeyDown)
+            {
+                if (e.KeyCode.ToString() == AppSettings.Settings.Instance.Shell_WindowsStateChangeShortcut)
+                {
+                    ChangeWindowState();
+                }
+                _shell_ctrlKeyDown = false;
+            }
+            if (e.KeyCode.ToString() == "LControlKey" || e.KeyCode.ToString() == "RControlKey")
+            {
+                _shell_ctrlKeyDown = true;
+            }
+        }
+
+        #endregion
 
         private void InitializeNotifyIcon()
         {

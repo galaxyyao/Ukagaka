@@ -22,6 +22,10 @@ Redmine API is under Apache 2 open-source license. license file has been added t
 
 Drag & drop control comes from http://www.codeproject.com/Articles/20483/Drag-and-Drop-Windows-Form-Controls-Design-UI-at-R, which is under The Code Project Open License (CPOL).
 
+4. Global Mouse and Keyboard Hooks:
+
+Global Mouse and Keyboard Hooks comes from http://www.codeproject.com/Articles/7294/Processing-Global-Mouse-and-Keyboard-Hooks-in-C, which is under The Code Project Open License (CPOL).
+
 
 Windows environment and .NET Framework 4.0 is required for running.
 

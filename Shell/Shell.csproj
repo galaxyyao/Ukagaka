@@ -166,6 +166,10 @@
       <Project>{8203A14C-2C6D-4AC1-B62E-AAFA550FFCF9}</Project>
       <Name>Ghost</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Third-parties\Gma.UserActivityMonitor\Gma.UserActivityMonitor.csproj">
+      <Project>{8F83ABE4-02FC-42DA-91C9-2E68464F8B84}</Project>
+      <Name>Gma.UserActivityMonitor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Third-parties\Redmine.Net.Api\Redmine.Net.Api.csproj">
       <Project>{F99E4720-D2A0-461B-A454-E6169BFA8C38}</Project>
       <Name>Redmine.Net.Api</Name>

@@ -34,6 +34,7 @@
             this.dialogPanelSakura = new System.Windows.Forms.FlowLayoutPanel();
             this.dialogPanelKero = new System.Windows.Forms.FlowLayoutPanel();
             this.popupPanel1 = new System.Windows.Forms.TableLayoutPanel();
+
             ((System.ComponentModel.ISupportInitialize)(this.picSakura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKero)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.popupPanel1.Location = new System.Drawing.Point(200, 200);
             this.popupPanel1.Name = "popupPanel1";
             this.popupPanel1.Size = new System.Drawing.Size(200, 100);
+
             // 
             // Ukagaka
             // 
