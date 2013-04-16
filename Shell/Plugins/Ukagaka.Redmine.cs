@@ -234,19 +234,22 @@ namespace Shell
                     break;
                 case 1:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 1
+                                              where issue.DueDate!=null && 
+                                              (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 1
                                               && ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) >= 0)
                                               select issue).ToList();
                     break;
                 case 2:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 3
+                                              where issue.DueDate != null && 
+                                              (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 3
                                               && ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) > 1)
                                               select issue).ToList();
                     break;
                 case 3:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) < 0)
+                                              where issue.DueDate != null && 
+                                              (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) < 0)
                                               select issue).ToList();
                     break;
                 case 4:

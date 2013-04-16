@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Redmine>
   <Host>p.honestwalker.com</Host>
-  <ApiKey>4b6f7b8daca67249e19b074d290bd9835e160bfb</ApiKey>
-  <CheckIssueIntervalMinutes>1</CheckIssueIntervalMinutes>
+  <ApiKey>b158b6bd27cb04a3fdf0302d5ae4c02cacf0c046</ApiKey>
+  <CheckIssueIntervalMinutes>10</CheckIssueIntervalMinutes>
   <IsStartWhenWindowsStartup>False</IsStartWhenWindowsStartup>
   <IsFloaterShown>True</IsFloaterShown>
   <FloaterLeft>-1</FloaterLeft>
