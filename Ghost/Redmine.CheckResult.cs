@@ -23,7 +23,7 @@ namespace Ghost
                     if (MyIssues != null)
                     {
                         return (from issue in MyIssues
-                                where (issue.Status.Name == "New" || issue.Status.Name == "Progress" || issue.Status.Name == "Feedback")
+                                where (issue.Status.Name == "New" || issue.Status.Name == "In Progress" || issue.Status.Name == "Feedback")
                                 select issue).Count();
                     }
                     else
@@ -63,7 +63,7 @@ namespace Ghost
                     if (MyIssues != null)
                     {
                         Issue nearestIssue = (from issue in MyIssues
-                                                   where (issue.Status.Name == "New" || issue.Status.Name == "Progress" || issue.Status.Name == "Feedback")
+                                              where (issue.Status.Name == "New" || issue.Status.Name == "In Progress" || issue.Status.Name == "Feedback")
                                                    select issue).OrderBy(issue => issue.DueDate).FirstOrDefault();
                         if (nearestIssue == null)
                             return 100;
@@ -75,6 +75,48 @@ namespace Ghost
                     else
                     {
                         return 100;// A temp big value
+                    }
+                }
+            }
+
+            public int TodayUpdatedOpenCount
+            {
+                get
+                {
+                    if (MyIssues != null)
+                    {
+                        var todayUpdatedIssues = (from issue in MyIssues
+                                              where (issue.UpdatedOn.Value.Date==DateTime.Today.Date)
+                                              && (issue.Status.Name == "New" || issue.Status.Name == "In Progress" || issue.Status.Name == "Feedback")
+                                              select issue);
+                        if (todayUpdatedIssues == null)
+                            return 0;
+                        return todayUpdatedIssues.Count();
+                    }
+                    else
+                    {
+                        return 0;// A temp big value
+                    }
+                }
+            }
+
+            public int TodayUpdatedToCloseCount
+            {
+                get
+                {
+                    if (MyIssues != null)
+                    {
+                        var todayUpdatedIssues = (from issue in MyIssues
+                                                  where (issue.UpdatedOn == DateTime.Today)
+                                                  && (issue.Status.Name == "Resolved" || issue.Status.Name == "Rejected" || issue.Status.Name == "Wont Fix")
+                                                  select issue);
+                        if (todayUpdatedIssues == null)
+                            return 0;
+                        return todayUpdatedIssues.Count();
+                    }
+                    else
+                    {
+                        return 0;// A temp big value
                     }
                 }
             }

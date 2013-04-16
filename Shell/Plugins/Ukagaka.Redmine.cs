@@ -31,35 +31,7 @@ namespace Shell
         {
             ClearMenu();
 
-            UkagakaMenu visitMyRedminePageMenu = new UkagakaMenu();
-            visitMyRedminePageMenu.Text = "访问我的任务页";
-            UkagakaLabel blank1 = new UkagakaLabel();
-            blank1.Text = string.Empty;
-            UkagakaMenu viewUrgentTaskMenu = new UkagakaMenu();
-            viewUrgentTaskMenu.Text = "查看紧急的任务";
-            UkagakaMenu viewRelativeUrgentTaskMenu = new UkagakaMenu();
-            viewRelativeUrgentTaskMenu.Text = "查看较紧急的任务";
-            UkagakaMenu viewOverDueTaskMenu = new UkagakaMenu();
-            viewOverDueTaskMenu.Text = "查看已超期的任务";
-            UkagakaMenu viewAllTaskMenu = new UkagakaMenu();
-            viewAllTaskMenu.Text = "查看我所有的任务";
 
-            visitMyRedminePageMenu.Click += new EventHandler(visitMyRedminePageMenu_Click);
-            viewUrgentTaskMenu.Click += new EventHandler(viewUrgentTaskMenu_Click);
-            viewRelativeUrgentTaskMenu.Click += new EventHandler(viewRelativeUrgentTaskMenu_Click);
-            viewOverDueTaskMenu.Click += new EventHandler(viewOverDueTaskMenu_Click);
-            viewAllTaskMenu.Click += new EventHandler(viewAllTaskMenu_Click);
-
-            dialogPanelSakura.Controls.Add(visitMyRedminePageMenu);
-            dialogPanelSakura.Controls.Add(blank1);
-            dialogPanelSakura.Controls.Add(viewUrgentTaskMenu);
-            dialogPanelSakura.Controls.Add(viewRelativeUrgentTaskMenu);
-            dialogPanelSakura.Controls.Add(viewOverDueTaskMenu);
-            dialogPanelSakura.Controls.Add(viewAllTaskMenu);
-
-            UkagakaLabel blank2 = new UkagakaLabel();
-            blank2.Text = string.Empty;
-            dialogPanelSakura.Controls.Add(blank2);
 
             AddReturnMenuItem();
         }
@@ -100,6 +72,7 @@ namespace Shell
 
             _redmine_TaskFilter1 = new UkagakaComboBox();
             _redmine_TaskFilter1.Width = 200;
+            ComboBoxItem filter1Item0 = new ComboBoxItem("所有", 0);
             ComboBoxItem filter1Item1 = new ComboBoxItem("待完成（大类）", -1);
             ComboBoxItem filter1Item2 = new ComboBoxItem("待关闭（大类）", -2);
             ComboBoxItem filter1Item3 = new ComboBoxItem("新任务", 1);
@@ -108,6 +81,7 @@ namespace Shell
             ComboBoxItem filter1Item6 = new ComboBoxItem("用户反馈", 4);
             ComboBoxItem filter1Item7 = new ComboBoxItem("不处理的任务", 6);
             ComboBoxItem filter1Item8 = new ComboBoxItem("不会修复的Bug", 7);
+            _redmine_TaskFilter1.Items.Add(filter1Item0);
             _redmine_TaskFilter1.Items.Add(filter1Item1);
             _redmine_TaskFilter1.Items.Add(filter1Item2);
             _redmine_TaskFilter1.Items.Add(filter1Item3);
@@ -149,15 +123,15 @@ namespace Shell
                     break;
                 case RedmineFilterEnum.OverDue:
                     _redmine_TaskFilter1.SelectedIndex = 0;
-                    _redmine_TaskFilter2.SelectedIndex = 4;
+                    _redmine_TaskFilter2.SelectedIndex = 3;
                     break;
                 case RedmineFilterEnum.Urgent:
                     _redmine_TaskFilter1.SelectedIndex = 0;
-                    _redmine_TaskFilter2.SelectedIndex = 2;
+                    _redmine_TaskFilter2.SelectedIndex = 1;
                     break;
                 case RedmineFilterEnum.RelativeUrgent:
                     _redmine_TaskFilter1.SelectedIndex = 0;
-                    _redmine_TaskFilter2.SelectedIndex = 3;
+                    _redmine_TaskFilter2.SelectedIndex = 2;
                     break;
                 default:
                     _redmine_TaskFilter1.SelectedIndex = 0;
@@ -184,40 +158,44 @@ namespace Shell
             {
                 case 0:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "New" || issue.Status.Name == "Progress" || issue.Status.Name == "Feedback")
                                               select issue).ToList();
                     break;
                 case 1:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "Resolved" || issue.Status.Name == "Rejected" || issue.Status.Name == "Wont Fix")
+                                              where (issue.Status.Name == "New" || issue.Status.Name == "In Progress" || issue.Status.Name == "Feedback")
                                               select issue).ToList();
                     break;
                 case 2:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "New")
+                                              where (issue.Status.Name == "Resolved" || issue.Status.Name == "Rejected" || issue.Status.Name == "Wont Fix")
                                               select issue).ToList();
                     break;
                 case 3:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "Progress")
+                                              where (issue.Status.Name == "New")
                                               select issue).ToList();
                     break;
                 case 4:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "Resolved")
+                                              where (issue.Status.Name == "In Progress")
                                               select issue).ToList();
                     break;
                 case 5:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "Feedback")
+                                              where (issue.Status.Name == "Resolved")
                                               select issue).ToList();
                     break;
                 case 6:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where (issue.Status.Name == "Rejected")
+                                              where (issue.Status.Name == "Feedback")
                                               select issue).ToList();
                     break;
                 case 7:
+                    _redmine_filteredIssue = (from issue in _redmine_filteredIssue
+                                              where (issue.Status.Name == "Rejected")
+                                              select issue).ToList();
+                    break;
+                case 8:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
                                               where (issue.Status.Name == "Wont Fix")
                                               select issue).ToList();
@@ -230,37 +208,37 @@ namespace Shell
             {
                 case 0:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              select issue).OrderBy(issue => issue.DueDate).ToList();
+                                              select issue).OrderByDescending(issue => issue.UpdatedOn).ToList();
                     break;
                 case 1:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where issue.DueDate!=null && 
+                                              where issue.DueDate != null &&
                                               (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 1
                                               && ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) >= 0)
-                                              select issue).ToList();
+                                              select issue).OrderBy(issue => issue.DueDate).ToList();
                     break;
                 case 2:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where issue.DueDate != null && 
+                                              where issue.DueDate != null &&
                                               (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) <= 3
                                               && ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) > 1)
-                                              select issue).ToList();
+                                              select issue).OrderBy(issue => issue.DueDate).ToList();
                     break;
                 case 3:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
-                                              where issue.DueDate != null && 
+                                              where issue.DueDate != null &&
                                               (ExtDate.GetBusinessDays(DateTime.Today, (DateTime)issue.DueDate) < 0)
                                               select issue).ToList();
                     break;
                 case 4:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
                                               where (issue.Priority.Name == "High" || issue.Priority.Name == "Urgent" || issue.Priority.Name == "Immediate")
-                                              select issue).ToList();
+                                              select issue).OrderBy(issue => issue.DueDate).ToList();
                     break;
                 case 5:
                     _redmine_filteredIssue = (from issue in _redmine_filteredIssue
                                               where (issue.Priority.Name == "Low")
-                                              select issue).ToList();
+                                              select issue).OrderBy(issue => issue.DueDate).ToList();
                     break;
                 default:
                     break;

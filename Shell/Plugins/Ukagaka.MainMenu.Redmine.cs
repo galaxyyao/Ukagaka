@@ -35,7 +35,7 @@ namespace Shell
             _lblOpenIssue.MouseLeave += new EventHandler(_lblOpenIssue_MouseLeave);
 
             _lblToCloseIssue = new UkagakaLabel();
-            _lblToCloseIssue.Text = "待完成的任务：-";
+            _lblToCloseIssue.Text = "待关闭的任务：-";
             _lblToCloseIssue.Width = 300;
             _lblToCloseIssue.Cursor = Cursors.Hand;
             _lblToCloseIssue.Click += new EventHandler(_lblToCloseIssue_Click);
@@ -54,16 +54,36 @@ namespace Shell
                 StartScheduledUpdate();
             }
 
-            UkagakaLabel blank1 = new UkagakaLabel();
-            blank1.Text = string.Empty;
-            UkagakaMenu redmineMenu = new UkagakaMenu();
-            redmineMenu.Text = "任务详情";
-            redmineMenu.Click += new EventHandler(redmineMenu_Click);
+
 
             dialogPanelSakura.Controls.Add(_lblOpenIssue);
             dialogPanelSakura.Controls.Add(_lblToCloseIssue);
+
+            UkagakaMenu visitMyRedminePageMenu = new UkagakaMenu();
+            visitMyRedminePageMenu.Text = "访问我的任务页";
+            UkagakaLabel blank1 = new UkagakaLabel();
+            blank1.Text = string.Empty;
+            UkagakaMenu viewUrgentTaskMenu = new UkagakaMenu();
+            viewUrgentTaskMenu.Text = "查看紧急的任务";
+            UkagakaMenu viewRelativeUrgentTaskMenu = new UkagakaMenu();
+            viewRelativeUrgentTaskMenu.Text = "查看较紧急的任务";
+            UkagakaMenu viewOverDueTaskMenu = new UkagakaMenu();
+            viewOverDueTaskMenu.Text = "查看已超期的任务";
+            UkagakaMenu viewAllTaskMenu = new UkagakaMenu();
+            viewAllTaskMenu.Text = "查看我所有的任务";
+
+            visitMyRedminePageMenu.Click += new EventHandler(visitMyRedminePageMenu_Click);
+            viewUrgentTaskMenu.Click += new EventHandler(viewUrgentTaskMenu_Click);
+            viewRelativeUrgentTaskMenu.Click += new EventHandler(viewRelativeUrgentTaskMenu_Click);
+            viewOverDueTaskMenu.Click += new EventHandler(viewOverDueTaskMenu_Click);
+            viewAllTaskMenu.Click += new EventHandler(viewAllTaskMenu_Click);
+
+            dialogPanelSakura.Controls.Add(visitMyRedminePageMenu);
             dialogPanelSakura.Controls.Add(blank1);
-            dialogPanelSakura.Controls.Add(redmineMenu);
+            dialogPanelSakura.Controls.Add(viewUrgentTaskMenu);
+            dialogPanelSakura.Controls.Add(viewRelativeUrgentTaskMenu);
+            dialogPanelSakura.Controls.Add(viewOverDueTaskMenu);
+            dialogPanelSakura.Controls.Add(viewAllTaskMenu);
         }
 
         void _issueUpdateWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -175,7 +195,7 @@ namespace Shell
 
             Ghost.Redmine.CheckResult result = Ghost.Ghost.Instance.RedmineService.CurrentResult;
 
-            _lblOpenIssue.Text = string.Format("待完成的任务：{0}", result.OpenIssueCount);
+            _lblOpenIssue.Text = string.Format("待完成的任务：{0}({1})", result.OpenIssueCount, result.TodayUpdatedOpenCount);
             if (result.NearestDue >= 3)
                 _lblOpenIssue.BackColor = Color.Green;
             else if (result.NearestDue >= 1)
@@ -188,7 +208,7 @@ namespace Shell
             else
                 _lblOpenIssue.BackColor = Color.Red;
 
-            _lblToCloseIssue.Text = string.Format("待关闭的任务：{0}", result.ToCloseIssueCount);
+            _lblToCloseIssue.Text = string.Format("待关闭的任务：{0}({1})", result.ToCloseIssueCount, result.TodayUpdatedToCloseCount);
             _lblToCloseIssue.BackColor = Color.Green;
         }
 

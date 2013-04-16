@@ -43,6 +43,8 @@ namespace Shell
                 _floater.Show();
             else
                 _floater.Hide();
+            picSakura.Hide();
+            picKero.Hide();
         }
 
         private void Shell_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,15 +147,15 @@ namespace Shell
             ChangeWindowState();
         }
 
-        private void picSakura_Click(object sender, EventArgs e)
-        {
-            dialogPanelSakura.Visible = (dialogPanelSakura.Visible == true) ? false : true;
-        }
+        //private void picSakura_Click(object sender, EventArgs e)
+        //{
+        //    dialogPanelSakura.Visible = (dialogPanelSakura.Visible == true) ? false : true;
+        //}
 
-        private void picKero_Click(object sender, EventArgs e)
-        {
-            dialogPanelKero.Visible = (dialogPanelKero.Visible == true) ? false : true;
-        }
+        //private void picKero_Click(object sender, EventArgs e)
+        //{
+        //    dialogPanelKero.Visible = (dialogPanelKero.Visible == true) ? false : true;
+        //}
 
         private void SetControlLocationToCenter_Click(object sender, EventArgs e)
         {

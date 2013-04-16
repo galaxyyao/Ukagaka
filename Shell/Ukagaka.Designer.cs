@@ -46,7 +46,6 @@
             this.picSakura.Size = new System.Drawing.Size(100, 50);
             this.picSakura.TabIndex = 3;
             this.picSakura.TabStop = false;
-            this.picSakura.Click += new System.EventHandler(this.picSakura_Click);
             // 
             // dragControl1
             // 
@@ -63,7 +62,6 @@
             this.picKero.Size = new System.Drawing.Size(100, 50);
             this.picKero.TabIndex = 2;
             this.picKero.TabStop = false;
-            this.picKero.Click += new System.EventHandler(this.picKero_Click);
             // 
             // dialogPanelSakura
             // 
@@ -71,7 +69,6 @@
             this.dialogPanelSakura.Name = "dialogPanelSakura";
             this.dialogPanelSakura.Size = new System.Drawing.Size(200, 100);
             this.dialogPanelSakura.TabIndex = 1;
-            this.dialogPanelSakura.Click += new System.EventHandler(this.picSakura_Click);
             // 
             // dialogPanelKero
             // 
@@ -79,7 +76,6 @@
             this.dialogPanelKero.Name = "dialogPanelKero";
             this.dialogPanelKero.Size = new System.Drawing.Size(200, 100);
             this.dialogPanelKero.TabIndex = 0;
-            this.dialogPanelKero.Click += new System.EventHandler(this.picKero_Click);
             // 
             // popupPanel1
             // 

@@ -15,16 +15,15 @@ namespace Shell
             dialogPanelSakura.Controls.Clear();
             dialogPanelSakura.Show();
 
-            UkagakaLabel lblWelcome = new UkagakaLabel();
-            lblWelcome.Text = "嗯？叫我？";
-            lblWelcome.Width = 250;
-            dialogPanelSakura.Controls.Add(lblWelcome);
 
             if (AppSettings.Settings.Instance.Service_IsRedmineEnabled)
             {
                 MainMenu_AddRedmineMenuItems();
             }
 
+            UkagakaLabel blank2 = new UkagakaLabel();
+            blank2.Text = string.Empty;
+            dialogPanelSakura.Controls.Add(blank2);
 
             UkagakaMenu settingMenu = new UkagakaMenu();
             settingMenu.Text = "设置";
